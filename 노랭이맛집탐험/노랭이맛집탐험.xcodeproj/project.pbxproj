@@ -281,13 +281,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = FM25SY5PDQ;
+				DEVELOPMENT_TEAM = AWJC5FV6CK;
 				INFOPLIST_FILE = "노랭이맛집탐험/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "kpu.2018class.-------------------";
+				PRODUCT_BUNDLE_IDENTIFIER = kpu.yellowFood;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -299,13 +299,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = FM25SY5PDQ;
+				DEVELOPMENT_TEAM = AWJC5FV6CK;
 				INFOPLIST_FILE = "노랭이맛집탐험/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "kpu.2018class.-------------------";
+				PRODUCT_BUNDLE_IDENTIFIER = kpu.yellowFood;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
