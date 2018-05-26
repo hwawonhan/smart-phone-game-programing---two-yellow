@@ -8,8 +8,11 @@
 
 import UIKit
 
+
 class WordViewController: UITableViewController, XMLParserDelegate {
     @IBOutlet var tbData: UITableView!
+    
+    //var parser: XMLParser = XMLParser(contentsOf:(URL(string:"https://openapi.naver.com/v1/search/local.xml?query=종로맛집"))!)!
     var parser = XMLParser()
     var posts = NSMutableArray()
     var elements = NSMutableDictionary()
@@ -20,29 +23,53 @@ class WordViewController: UITableViewController, XMLParserDelegate {
     
     func beginParsing()
     {
-        /*
-        String clientId = "YOUR_CLIENT_ID";//애플리케이션 클라이언트 아이디값";
-        String clientSecret = "YOUR_CLIENT_SECRET";//애플리케이션 클라이언트 시크릿값";
-        try {
-            String text = URLEncoder.encode("안녕하세요. 오늘 기분은 어떻습니까?", "UTF-8");
-            String apiURL = "https://openapi.naver.com/v1/papago/n2mt";
-            URL url = new URL(apiURL);
-            HttpURLConnection con = (HttpURLConnection)url.openConnection();
-            con.setRequestMethod("POST");
-            con.setRequestProperty("X-Naver-Client-Id", clientId);
-            con.setRequestProperty("X-Naver-Client-Secret", clientSecret);
-        */
-        var clientId: String = "1qO9XJIT5mR1O3sz_u6J"
-        var clientSecret: String = "bZcbo3uiSX"
-        var url: String = "https://openapi.naver.com/search/local"
         
         posts = []
-        parser = XMLParser(contentsOf:(URL(string:"https://openapi.naver.com/search/local/홍대맛집/10/1/random/ClientId=1qO9XJIT5mR1O3sz_u6J/ClientSecret=bZcbo3uiSX"))!)!
-        parser.delegate = self
-        parser.parse()
-        tbData!.reloadData()
+        let coment = "종로한식"
+        let api = "https://openapi.naver.com/v1/search/local.xml?query=\(coment)&display=5&start=1&sort=random"
+        let encoding = api.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+        let url = URL(string: encoding!)
+        
+        var request = URLRequest.init(url: url!)
+        request.setValue("1qO9XJIT5mR1O3sz_u6J", forHTTPHeaderField: "X-Naver-Client-Id")
+        request.setValue("bZcbo3uiSX", forHTTPHeaderField: "X-Naver-Client-Secret")
+        request.httpMethod = "get"
+        
+        let session = URLSession.shared
+        let task = session.dataTask(with: request, completionHandler: { (data: Data?, response: URLResponse?, error: Error?) in
+            //error 나면 뒤져라
+            guard error == nil && data != nil else {
+                if let err = error {
+                    print(err.localizedDescription)
+                }
+                return
+            }
+            
+           
+            
+            //error 안났으면 data 내놔라
+            if let _data = data {
+                if let strData = NSString(data: _data, encoding: String.Encoding.utf8.rawValue) {
+                    let str = String(strData)
+                    
+                    
+                    // Main thread에서 출력하기 위해서는 아래에서
+                    DispatchQueue.main.async {
+                        //self.라벨.text = str
+                        print(str)
+                    }
+                }
+            }else{
+                print("data nil")
+            }
+        })
+        task.resume()
+        
     }
     
+    
+    
+
     func parser(_ parser: XMLParser, didStartElement elementName:
         String, namespaceURI: String?, qualifiedName qName: String?,
                 attributes attributeDict: [String : String])
@@ -60,7 +87,7 @@ class WordViewController: UITableViewController, XMLParserDelegate {
     }
     
     func parser(_ parser: XMLParser, foundCharacters string: String) {
-        if element.isEqual(to: "name") {
+        if element.isEqual(to: "title") {
             title1.append(string)
         } else if element.isEqual(to: "address") {
             date.append(string)
@@ -71,7 +98,7 @@ class WordViewController: UITableViewController, XMLParserDelegate {
     {
         if (elementName as NSString).isEqual(to: "item") {
             if !title1.isEqual(nil) {
-                elements.setObject(title1, forKey: "name" as NSCopying)
+                elements.setObject(title1, forKey: "title" as NSCopying)
             }
             if !date.isEqual(nil) {
                 elements.setObject(date, forKey: "address" as NSCopying)
