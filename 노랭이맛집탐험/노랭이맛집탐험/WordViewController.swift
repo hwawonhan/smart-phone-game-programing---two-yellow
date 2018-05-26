@@ -8,13 +8,81 @@
 
 import UIKit
 
-class WordViewController: UITableViewController {
-    
+class WordViewController: UITableViewController, XMLParserDelegate {
+    @IBOutlet var tbData: UITableView!
+    var parser = XMLParser()
+    var posts = NSMutableArray()
+    var elements = NSMutableDictionary()
+    var element = NSString()
+    var title1 = NSMutableString()
+    var date = NSMutableString()
     var foodRestaurants:[Restaurant] = foodData
+    
+    func beginParsing()
+    {
+        /*
+        String clientId = "YOUR_CLIENT_ID";//애플리케이션 클라이언트 아이디값";
+        String clientSecret = "YOUR_CLIENT_SECRET";//애플리케이션 클라이언트 시크릿값";
+        try {
+            String text = URLEncoder.encode("안녕하세요. 오늘 기분은 어떻습니까?", "UTF-8");
+            String apiURL = "https://openapi.naver.com/v1/papago/n2mt";
+            URL url = new URL(apiURL);
+            HttpURLConnection con = (HttpURLConnection)url.openConnection();
+            con.setRequestMethod("POST");
+            con.setRequestProperty("X-Naver-Client-Id", clientId);
+            con.setRequestProperty("X-Naver-Client-Secret", clientSecret);
+        */
+        var clientId: String = "1qO9XJIT5mR1O3sz_u6J"
+        var clientSecret: String = "bZcbo3uiSX"
+        var url: String = "https://openapi.naver.com/search/local"
+        
+        posts = []
+        parser = XMLParser(contentsOf:(URL(string:"https://openapi.naver.com/search/local/홍대맛집/10/1/random/ClientId=1qO9XJIT5mR1O3sz_u6J/ClientSecret=bZcbo3uiSX"))!)!
+        parser.delegate = self
+        parser.parse()
+        tbData!.reloadData()
+    }
+    
+    func parser(_ parser: XMLParser, didStartElement elementName:
+        String, namespaceURI: String?, qualifiedName qName: String?,
+                attributes attributeDict: [String : String])
+    {
+        element = elementName as NSString
+        if (elementName as NSString).isEqual(to: "item")
+        {
+            elements = NSMutableDictionary()
+            elements = [:]
+            title1 = NSMutableString()
+            title1 = ""
+            date = NSMutableString()
+            date = ""
+        }
+    }
+    
+    func parser(_ parser: XMLParser, foundCharacters string: String) {
+        if element.isEqual(to: "name") {
+            title1.append(string)
+        } else if element.isEqual(to: "address") {
+            date.append(string)
+        }
+    }
+    
+    func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?)
+    {
+        if (elementName as NSString).isEqual(to: "item") {
+            if !title1.isEqual(nil) {
+                elements.setObject(title1, forKey: "name" as NSCopying)
+            }
+            if !date.isEqual(nil) {
+                elements.setObject(date, forKey: "address" as NSCopying)
+            }
+            posts.add(elements)
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        beginParsing()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -36,24 +104,16 @@ class WordViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return foodRestaurants.count
+        return posts.count
     }
 
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PlayerCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         
-        let food = foodRestaurants[indexPath.row] as Restaurant
-        
-        if let nameLabel = cell.viewWithTag(100) as? UILabel {
-            nameLabel.text = food.name
-        }
-        
-        if let adressLabel = cell.viewWithTag(101) as? UILabel {
-            adressLabel.text = food.adress
-        }
-
+        cell.textLabel?.text = (posts.object(at: indexPath.row) as AnyObject).value(forKey: "title") as! NSString as String
+        cell.detailTextLabel?.text = (posts.object(at: indexPath.row) as AnyObject).value(forKey: "address") as! NSString as String
         return cell
     }
  
