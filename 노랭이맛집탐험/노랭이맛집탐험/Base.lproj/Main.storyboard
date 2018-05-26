@@ -78,10 +78,10 @@
             </objects>
             <point key="canvasLocation" x="1076" y="132.68365817091455"/>
         </scene>
-        <!--View Controller-->
+        <!--Select Menu View Controller-->
         <scene sceneID="j0E-C1-SoP">
             <objects>
-                <viewController id="Aei-6C-wl4" sceneMemberID="viewController">
+                <viewController id="Aei-6C-wl4" customClass="SelectMenuViewController" customModule="___________________" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="62V-vI-JtL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -179,6 +179,19 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="선택장애용"/>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" textAlignment="right" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="NsV-Yn-x7r">
+                                <rect key="frame" x="65" y="84" width="300" height="20"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" notEnabled="YES"/>
+                                </accessibility>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="91O-Cz-y09"/>
+                                    <constraint firstAttribute="width" constant="300" id="qNQ-4g-JrG"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -188,7 +201,9 @@
                             <constraint firstItem="4X6-Gc-8q7" firstAttribute="centerX" secondItem="62V-vI-JtL" secondAttribute="centerX" constant="75" id="AA3-ZF-ZP9"/>
                             <constraint firstItem="Eay-mb-pvf" firstAttribute="centerX" secondItem="62V-vI-JtL" secondAttribute="centerX" constant="75" id="Gze-Y5-a3u"/>
                             <constraint firstItem="Ivi-pm-IX9" firstAttribute="centerY" secondItem="62V-vI-JtL" secondAttribute="centerY" constant="-180" id="IZh-QJ-wzi"/>
+                            <constraint firstItem="NsV-Yn-x7r" firstAttribute="top" secondItem="aQl-PX-J0x" secondAttribute="top" constant="20" id="IiK-WJ-PqN"/>
                             <constraint firstItem="wVO-ZJ-x2W" firstAttribute="centerY" secondItem="62V-vI-JtL" secondAttribute="centerY" constant="-110" id="J8P-NE-Cai"/>
+                            <constraint firstItem="aQl-PX-J0x" firstAttribute="trailing" secondItem="NsV-Yn-x7r" secondAttribute="trailing" constant="10" id="Jqn-sm-GL0"/>
                             <constraint firstItem="Di5-df-FMa" firstAttribute="centerX" secondItem="62V-vI-JtL" secondAttribute="centerX" constant="-75" id="L6Q-1n-0tc"/>
                             <constraint firstItem="5Px-VA-S0v" firstAttribute="centerX" secondItem="62V-vI-JtL" secondAttribute="centerX" constant="-75" id="RZu-Sv-5NY"/>
                             <constraint firstItem="wVO-ZJ-x2W" firstAttribute="centerX" secondItem="62V-vI-JtL" secondAttribute="centerX" constant="75" id="aZl-aD-Ycv"/>
@@ -204,6 +219,9 @@
                         <viewLayoutGuide key="safeArea" id="aQl-PX-J0x"/>
                     </view>
                     <navigationItem key="navigationItem" id="YMU-42-Pn2"/>
+                    <connections>
+                        <outlet property="currentLocationText" destination="NsV-Yn-x7r" id="AIB-8o-GtK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q7a-W7-eMT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -321,7 +339,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YRN-LJ-dSB">
-                                <rect key="frame" x="161" y="552" width="52" height="30"/>
+                                <rect key="frame" x="161.5" y="552" width="52" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="cFw-Nf-BgN"/>
                                     <constraint firstAttribute="width" constant="52" id="fep-kA-vys"/>
@@ -400,9 +418,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" text="앱정보" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="KHh-Pm-W2H">
-                                <rect key="frame" x="16" y="92" width="343" height="555"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="앱정보" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="KHh-Pm-W2H">
+                                <rect key="frame" x="37.5" y="183.5" width="300" height="300"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="5Bf-yM-e9D"/>
+                                    <constraint firstAttribute="width" constant="300" id="Jp5-S4-dWO"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -416,7 +438,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="Info" leftItemsSupplementBackButton="YES" id="mDE-hV-R95">
                         <barButtonItem key="backBarButtonItem" title="back" id="qIV-7j-Bqz"/>
-                        <barButtonItem key="leftBarButtonItem" title="Back" style="plain" id="gK0-dE-BPs"/>
+                        <barButtonItem key="leftBarButtonItem" title="Back" style="plain" id="gK0-dE-BPs">
+                            <connections>
+                                <segue destination="BYZ-38-t0r" kind="show" id="j4O-9P-uXC"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZWl-4b-X1X" userLabel="First Responder" sceneMemberID="firstResponder"/>

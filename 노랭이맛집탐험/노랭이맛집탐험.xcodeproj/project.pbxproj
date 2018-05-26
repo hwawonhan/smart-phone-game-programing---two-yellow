@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A10BC6EB20B9A93E008BF9EB /* SelectMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10BC6EA20B9A93E008BF9EB /* SelectMenuViewController.swift */; };
 		A126EE5420B8136A009EA2F5 /* WordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A126EE5320B8136A009EA2F5 /* WordViewController.swift */; };
 		A126EE5620B8139D009EA2F5 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = A126EE5520B8139D009EA2F5 /* Word.swift */; };
 		A126EE5820B813FC009EA2F5 /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A126EE5720B813FC009EA2F5 /* SampleData.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A10BC6EA20B9A93E008BF9EB /* SelectMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectMenuViewController.swift; sourceTree = "<group>"; };
 		A126EE5320B8136A009EA2F5 /* WordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordViewController.swift; sourceTree = "<group>"; };
 		A126EE5520B8139D009EA2F5 /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
 		A126EE5720B813FC009EA2F5 /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 				A126EE5320B8136A009EA2F5 /* WordViewController.swift */,
 				A126EE5520B8139D009EA2F5 /* Word.swift */,
 				A126EE5720B813FC009EA2F5 /* SampleData.swift */,
+				A10BC6EA20B9A93E008BF9EB /* SelectMenuViewController.swift */,
 			);
 			path = "노랭이맛집탐험";
 			sourceTree = "<group>";
@@ -149,6 +152,7 @@
 				A171170B20A0455500A540BF /* ViewController.swift in Sources */,
 				A126EE5820B813FC009EA2F5 /* SampleData.swift in Sources */,
 				A171170920A0455500A540BF /* AppDelegate.swift in Sources */,
+				A10BC6EB20B9A93E008BF9EB /* SelectMenuViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
