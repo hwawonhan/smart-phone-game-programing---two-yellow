@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A10BC6EB20B9A93E008BF9EB /* SelectMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10BC6EA20B9A93E008BF9EB /* SelectMenuViewController.swift */; };
+		A126EE5420B8136A009EA2F5 /* WordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A126EE5320B8136A009EA2F5 /* WordViewController.swift */; };
+		A126EE5620B8139D009EA2F5 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = A126EE5520B8139D009EA2F5 /* Word.swift */; };
+		A126EE5820B813FC009EA2F5 /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A126EE5720B813FC009EA2F5 /* SampleData.swift */; };
 		A171170920A0455500A540BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A171170820A0455500A540BF /* AppDelegate.swift */; };
 		A171170B20A0455500A540BF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A171170A20A0455500A540BF /* ViewController.swift */; };
 		A171170E20A0455500A540BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A171170C20A0455500A540BF /* Main.storyboard */; };
@@ -15,6 +19,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A10BC6EA20B9A93E008BF9EB /* SelectMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectMenuViewController.swift; sourceTree = "<group>"; };
+		A126EE5320B8136A009EA2F5 /* WordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordViewController.swift; sourceTree = "<group>"; };
+		A126EE5520B8139D009EA2F5 /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
+		A126EE5720B813FC009EA2F5 /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
 		A171170520A0455400A540BF /* 노랭이맛집탐험.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "노랭이맛집탐험.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A171170820A0455500A540BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A171170A20A0455500A540BF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +68,10 @@
 				A171170F20A0455A00A540BF /* Assets.xcassets */,
 				A171171120A0455A00A540BF /* LaunchScreen.storyboard */,
 				A171171420A0455A00A540BF /* Info.plist */,
+				A126EE5320B8136A009EA2F5 /* WordViewController.swift */,
+				A126EE5520B8139D009EA2F5 /* Word.swift */,
+				A126EE5720B813FC009EA2F5 /* SampleData.swift */,
+				A10BC6EA20B9A93E008BF9EB /* SelectMenuViewController.swift */,
 			);
 			path = "노랭이맛집탐험";
 			sourceTree = "<group>";
@@ -135,8 +147,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A126EE5420B8136A009EA2F5 /* WordViewController.swift in Sources */,
+				A126EE5620B8139D009EA2F5 /* Word.swift in Sources */,
 				A171170B20A0455500A540BF /* ViewController.swift in Sources */,
+				A126EE5820B813FC009EA2F5 /* SampleData.swift in Sources */,
 				A171170920A0455500A540BF /* AppDelegate.swift in Sources */,
+				A10BC6EB20B9A93E008BF9EB /* SelectMenuViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,13 +297,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = FM25SY5PDQ;
+				DEVELOPMENT_TEAM = AWJC5FV6CK;
 				INFOPLIST_FILE = "노랭이맛집탐험/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "kpu.2018class.-------------------";
+				PRODUCT_BUNDLE_IDENTIFIER = kpu.yellowFoods;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -299,13 +315,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = FM25SY5PDQ;
+				DEVELOPMENT_TEAM = AWJC5FV6CK;
 				INFOPLIST_FILE = "노랭이맛집탐험/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "kpu.2018class.-------------------";
+				PRODUCT_BUNDLE_IDENTIFIER = kpu.yellowFoods;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
