@@ -10,7 +10,7 @@ import Foundation
 
 
 let foodData = [
-    Restaurant(name: "초이노미", adress: "시흥시 산기대학로"),
-    Restaurant(name: "김밥천국", adress: "서울시 각각"),
-    Restaurant(name: "빡빡빡", adress: "부천시 종로로")
+    Restaurant(name: "초이노미", adress: "시흥시 산기대학로", category: "", telephone: ""),
+    Restaurant(name: "김밥천국", adress: "서울시 각각", category: "", telephone: ""),
+    Restaurant(name: "빡빡빡", adress: "부천시 종로로", category: "", telephone: "")
 ]

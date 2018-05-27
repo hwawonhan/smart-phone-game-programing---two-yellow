@@ -10,9 +10,15 @@ import UIKit
 struct Restaurant {
     var name: String?
     var adress: String?
+    var category: String?
+    var telephone: String?
     
-    init(name: String?, adress: String?) {
+    
+    init(name: String?, adress: String?, category: String? , telephone: String?) {
         self.name = name
         self.adress = adress
+        self.category = category
+        self.telephone = telephone
+        
     }
 }

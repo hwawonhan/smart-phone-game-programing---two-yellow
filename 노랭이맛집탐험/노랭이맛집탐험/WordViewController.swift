@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 class WordViewController: UITableViewController, XMLParserDelegate {
     @IBOutlet var tbData: UITableView!
     
@@ -44,9 +43,7 @@ class WordViewController: UITableViewController, XMLParserDelegate {
                 }
                 return
             }
-            
-           
-            
+
             //error 안났으면 data 내놔라
             if let _data = data {
                 if let strData = NSString(data: _data, encoding: String.Encoding.utf8.rawValue) {
@@ -55,13 +52,15 @@ class WordViewController: UITableViewController, XMLParserDelegate {
                     
                     // Main thread에서 출력하기 위해서는 아래에서
                     DispatchQueue.main.async {
-                        //self.라벨.text = str
-                        print(str)
+                        self.tbData.reloadData()
+                        
                     }
                 }
             }else{
                 print("data nil")
             }
+        
+            
         })
         task.resume()
         
