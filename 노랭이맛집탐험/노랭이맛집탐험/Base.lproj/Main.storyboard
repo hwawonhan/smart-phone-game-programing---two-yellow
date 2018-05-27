@@ -278,31 +278,34 @@
             </objects>
             <point key="canvasLocation" x="5754.3999999999996" y="-1104.1979010494754"/>
         </scene>
-        <!--View Controller-->
+        <!--Image View Controller-->
         <scene sceneID="Uuu-qk-RbU">
             <objects>
-                <viewController id="jWm-J9-Rpj" sceneMemberID="viewController">
+                <viewController id="jWm-J9-Rpj" customClass="ImageViewController" customModule="___________________" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="P3h-uu-Yti">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="H1D-Yx-fyI">
-                                <rect key="frame" x="54" y="107.5" width="267" height="452"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="452" id="QwD-3T-1rz"/>
-                                    <constraint firstAttribute="width" constant="267" id="kZe-Yj-16q"/>
-                                </constraints>
-                            </imageView>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Q3L-3K-yjA">
                                 <rect key="frame" x="168" y="568.5" width="39" height="37"/>
                             </pageControl>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YIG-6d-JCb">
+                                <rect key="frame" x="67" y="182" width="240" height="302"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="302" id="7EM-w8-kfh"/>
+                                    <constraint firstAttribute="width" constant="240" id="hE3-me-YWm"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="jWm-J9-Rpj" id="ddC-OO-VkB"/>
+                                </connections>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="H1D-Yx-fyI" firstAttribute="centerX" secondItem="P3h-uu-Yti" secondAttribute="centerX" id="2QC-bk-Dgf"/>
-                            <constraint firstItem="H1D-Yx-fyI" firstAttribute="centerY" secondItem="P3h-uu-Yti" secondAttribute="centerY" id="2kA-6u-NM0"/>
+                            <constraint firstItem="YIG-6d-JCb" firstAttribute="centerY" secondItem="P3h-uu-Yti" secondAttribute="centerY" id="F4I-49-MvW"/>
                             <constraint firstItem="Q3L-3K-yjA" firstAttribute="centerY" secondItem="P3h-uu-Yti" secondAttribute="bottom" constant="-80" id="YMg-vo-5WM"/>
                             <constraint firstItem="Q3L-3K-yjA" firstAttribute="centerX" secondItem="P3h-uu-Yti" secondAttribute="centerX" id="f6l-G9-ozc"/>
+                            <constraint firstItem="YIG-6d-JCb" firstAttribute="centerX" secondItem="P3h-uu-Yti" secondAttribute="centerX" id="guT-oJ-RnZ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="04g-bu-vCw"/>
                     </view>
@@ -313,6 +316,10 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="pageControl" destination="Q3L-3K-yjA" id="CWV-cy-wVp"/>
+                        <outlet property="scrollView" destination="YIG-6d-JCb" id="xiD-KC-S2y"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gaN-Oq-oOl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -524,6 +531,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="sqB-jt-uTM"/>
+        <segue reference="Yaf-9h-wXq"/>
     </inferredMetricsTieBreakers>
 </document>
