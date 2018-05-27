@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NvT-8o-aSd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -260,19 +260,18 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="tbData" destination="G8v-uI-7zJ" id="Jsn-5z-7rI"/>
                                     <segue destination="FMt-IO-QZQ" kind="show" id="sqB-jt-uTM"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="kPl-Lj-3PC" id="rX9-yh-8WJ"/>
-                            <outlet property="delegate" destination="kPl-Lj-3PC" id="Yty-gT-drb"/>
+                            <outlet property="dataSource" destination="kPl-Lj-3PC" id="KB0-DY-kCT"/>
+                            <outlet property="delegate" destination="kPl-Lj-3PC" id="fGj-Cs-cBW"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="K42-B5-sly"/>
                     <connections>
-                        <outlet property="tbData" destination="G8v-uI-7zJ" id="8SB-Hz-w1K"/>
+                        <outlet property="tbData" destination="G8v-uI-7zJ" id="Stf-Wg-HSj"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wxT-Rl-6BX" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -447,7 +446,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZWl-4b-X1X" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2819" y="790"/>
+            <point key="canvasLocation" x="1926" y="895"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Qnt-th-yvo">
@@ -465,7 +464,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qcP-4A-3m8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1880" y="790"/>
+            <point key="canvasLocation" x="1076" y="895"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cgv-Bo-O8F">
@@ -525,7 +524,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="KGp-6x-gkh"/>
         <segue reference="sqB-jt-uTM"/>
     </inferredMetricsTieBreakers>
 </document>

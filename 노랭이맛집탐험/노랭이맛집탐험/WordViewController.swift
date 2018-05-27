@@ -10,22 +10,20 @@ import UIKit
 
 class WordViewController: UITableViewController, XMLParserDelegate {
     @IBOutlet var tbData: UITableView!
-    
-    //var parser: XMLParser = XMLParser(contentsOf:(URL(string:"https://openapi.naver.com/v1/search/local.xml?query=종로맛집"))!)!
     var parser = XMLParser()
     var posts = NSMutableArray()
     var elements = NSMutableDictionary()
     var element = NSString()
-    var title1 = NSMutableString()
-    var date = NSMutableString()
+    var name = NSMutableString()
+    var adress = NSMutableString()
+
     var foodRestaurants:[Restaurant] = foodData
-    
     func beginParsing()
     {
         
         posts = []
-        let coment = "종로한식"
-        let api = "https://openapi.naver.com/v1/search/local.xml?query=\(coment)&display=5&start=1&sort=random"
+        let coment = "정왕동 일식"
+        let api = "https://openapi.naver.com/v1/search/local.xml?query=\(coment)&display=10&start=1&sort=random"
         let encoding = api.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
         let url = URL(string: encoding!)
         
@@ -36,31 +34,20 @@ class WordViewController: UITableViewController, XMLParserDelegate {
         
         let session = URLSession.shared
         let task = session.dataTask(with: request, completionHandler: { (data: Data?, response: URLResponse?, error: Error?) in
-            //error 나면 뒤져라
+            //error check
             guard error == nil && data != nil else {
                 if let err = error {
                     print(err.localizedDescription)
                 }
                 return
             }
-
-            //error 안났으면 data 내놔라
-            if let _data = data {
-                if let strData = NSString(data: _data, encoding: String.Encoding.utf8.rawValue) {
-                    let str = String(strData)
-                    
-                    
-                    // Main thread에서 출력하기 위해서는 아래에서
-                    DispatchQueue.main.async {
-                        self.tbData.reloadData()
-                        
-                    }
-                }
-            }else{
-                print("data nil")
+            DispatchQueue.main.async {
+                self.parser = XMLParser(data: data!)
+                self.parser.delegate = self
+                self.parser.parse()
+                self.tbData.reloadData()
+                
             }
-        
-            
         })
         task.resume()
         
@@ -78,29 +65,29 @@ class WordViewController: UITableViewController, XMLParserDelegate {
         {
             elements = NSMutableDictionary()
             elements = [:]
-            title1 = NSMutableString()
-            title1 = ""
-            date = NSMutableString()
-            date = ""
+            name = NSMutableString()
+            name = ""
+            adress = NSMutableString()
+            adress = ""
         }
     }
     
     func parser(_ parser: XMLParser, foundCharacters string: String) {
         if element.isEqual(to: "title") {
-            title1.append(string)
+            name.append(string)
         } else if element.isEqual(to: "address") {
-            date.append(string)
+            adress.append(string)
         }
     }
     
     func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?)
     {
         if (elementName as NSString).isEqual(to: "item") {
-            if !title1.isEqual(nil) {
-                elements.setObject(title1, forKey: "title" as NSCopying)
+            if !name.isEqual(nil) {
+                elements.setObject(name, forKey: "title" as NSCopying)
             }
-            if !date.isEqual(nil) {
-                elements.setObject(date, forKey: "address" as NSCopying)
+            if !adress.isEqual(nil) {
+                elements.setObject(adress, forKey: "address" as NSCopying)
             }
             posts.add(elements)
         }
@@ -109,11 +96,6 @@ class WordViewController: UITableViewController, XMLParserDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         beginParsing()
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     override func didReceiveMemoryWarning() {
