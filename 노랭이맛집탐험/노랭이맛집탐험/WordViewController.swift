@@ -16,6 +16,8 @@ class WordViewController: UITableViewController, XMLParserDelegate {
     var element = NSString()
     var name = NSMutableString()
     var adress = NSMutableString()
+    var category = NSMutableString()
+    var telephone = NSMutableString()
 
     var foodRestaurants:[Restaurant] = foodData
     func beginParsing()
@@ -23,7 +25,7 @@ class WordViewController: UITableViewController, XMLParserDelegate {
         
         posts = []
         let coment = "정왕동 일식"
-        let api = "https://openapi.naver.com/v1/search/local.xml?query=\(coment)&display=10&start=1&sort=random"
+        let api = "https://openapi.naver.com/v1/search/local.xml?query=\(coment)&display=30&start=1&sort=random"
         let encoding = api.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
         let url = URL(string: encoding!)
         
@@ -69,6 +71,10 @@ class WordViewController: UITableViewController, XMLParserDelegate {
             name = ""
             adress = NSMutableString()
             adress = ""
+            category = NSMutableString()
+            category = ""
+            telephone = NSMutableString()
+            telephone = ""
         }
     }
     
@@ -77,6 +83,10 @@ class WordViewController: UITableViewController, XMLParserDelegate {
             name.append(string)
         } else if element.isEqual(to: "address") {
             adress.append(string)
+        } else if element.isEqual(to: "category") {
+            category.append(string)
+        } else if element.isEqual(to: "telephone") {
+            telephone.append(string)
         }
     }
     
@@ -88,6 +98,12 @@ class WordViewController: UITableViewController, XMLParserDelegate {
             }
             if !adress.isEqual(nil) {
                 elements.setObject(adress, forKey: "address" as NSCopying)
+            }
+            if !element.isEqual(nil) {
+                elements.setObject(category, forKey: "category" as NSCopying)
+            }
+            if !element.isEqual(nil) {
+                elements.setObject(telephone, forKey: "telephone" as NSCopying)
             }
             posts.add(elements)
         }
