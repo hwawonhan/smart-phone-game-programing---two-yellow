@@ -48,7 +48,6 @@ class WordViewController: UITableViewController, XMLParserDelegate {
                 self.parser.delegate = self
                 self.parser.parse()
                 self.tbData.reloadData()
-                
             }
         })
         task.resume()
