@@ -43,6 +43,7 @@ class WordViewController: UITableViewController, XMLParserDelegate {
                 }
                 return
             }
+            
             DispatchQueue.main.async {
                 self.parser = XMLParser(data: data!)
                 self.parser.delegate = self
