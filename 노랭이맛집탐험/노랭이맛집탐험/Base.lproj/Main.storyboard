@@ -94,7 +94,7 @@
                                     <constraint firstAttribute="height" constant="50" id="rPr-LF-dFx"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="메뉴1"/>
+                                <state key="normal" title="한식"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wY4-Ar-tk6">
                                 <rect key="frame" x="212.5" y="128.5" width="100" height="50"/>
@@ -104,7 +104,10 @@
                                     <constraint firstAttribute="height" constant="50" id="wiq-rP-MWZ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="메뉴2"/>
+                                <state key="normal" title="일식"/>
+                                <connections>
+                                    <segue destination="NvT-8o-aSd" kind="show" id="yZh-aX-IlL"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hqg-bW-xxb">
                                 <rect key="frame" x="62.5" y="198.5" width="100" height="50"/>
@@ -114,7 +117,7 @@
                                     <constraint firstAttribute="width" secondItem="Hqg-bW-xxb" secondAttribute="height" multiplier="2:1" id="tTB-HZ-cHP"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="메뉴3"/>
+                                <state key="normal" title="중식"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wVO-ZJ-x2W">
                                 <rect key="frame" x="212.5" y="198.5" width="100" height="50"/>
@@ -124,7 +127,7 @@
                                     <constraint firstAttribute="height" constant="50" id="cTp-XP-RDc"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="메뉴4"/>
+                                <state key="normal" title="치킨"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Px-VA-S0v">
                                 <rect key="frame" x="62.5" y="268.5" width="100" height="50"/>
@@ -134,7 +137,7 @@
                                     <constraint firstAttribute="width" secondItem="5Px-VA-S0v" secondAttribute="height" multiplier="2:1" id="tUv-HL-g2V"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="메뉴5"/>
+                                <state key="normal" title="피자"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4X6-Gc-8q7">
                                 <rect key="frame" x="212.5" y="268.5" width="100" height="50"/>
@@ -144,7 +147,7 @@
                                     <constraint firstAttribute="width" constant="100" id="upC-ZB-YSf"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="메뉴6"/>
+                                <state key="normal" title="분식"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Di5-df-FMa">
                                 <rect key="frame" x="62.5" y="338.5" width="100" height="50"/>
@@ -154,7 +157,7 @@
                                     <constraint firstAttribute="width" secondItem="Di5-df-FMa" secondAttribute="height" multiplier="2:1" id="zKA-iT-kdW"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="메뉴7"/>
+                                <state key="normal" title="디저트"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eay-mb-pvf">
                                 <rect key="frame" x="212.5" y="338.5" width="100" height="50"/>
@@ -164,10 +167,7 @@
                                     <constraint firstAttribute="width" constant="100" id="jPg-bG-djo"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="메뉴8"/>
-                                <connections>
-                                    <segue destination="NvT-8o-aSd" kind="show" id="rh3-bT-XUT"/>
-                                </connections>
+                                <state key="normal" title="야식"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qK5-s6-ucl">
                                 <rect key="frame" x="87.5" y="471" width="200" height="75"/>
@@ -178,9 +178,12 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="선택장애용"/>
+                                <connections>
+                                    <segue destination="8Dh-E0-s9W" kind="show" id="jrD-5L-Aui"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" textAlignment="right" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="NsV-Yn-x7r">
-                                <rect key="frame" x="65" y="84" width="300" height="20"/>
+                                <rect key="frame" x="65" y="40" width="300" height="20"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" notEnabled="YES"/>
                                 </accessibility>
@@ -225,7 +228,136 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q7a-W7-eMT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2764" y="132.68365817091455"/>
+            <point key="canvasLocation" x="3569" y="155"/>
+        </scene>
+        <!--Camera View Controller-->
+        <scene sceneID="0X6-fz-hgg">
+            <objects>
+                <viewController id="8Dh-E0-s9W" customClass="CameraViewController" customModule="___________________" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nBz-yc-FLE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8cx-KZ-6wp">
+                                <rect key="frame" x="5" y="69" width="360" height="518"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="it4-1j-HMz">
+                                <rect key="frame" x="164" y="617" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="f9U-tD-1xU" kind="show" id="agp-Xj-O8W"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RYs-8m-vCG">
+                                <rect key="frame" x="17" y="25" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="pUO-lS-zuK"/>
+                                    <constraint firstAttribute="height" constant="30" id="z14-M8-PvD"/>
+                                </constraints>
+                                <state key="normal" title="Back"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="8cx-KZ-6wp" firstAttribute="leading" secondItem="tzt-pL-q4l" secondAttribute="leading" constant="5" id="8Ac-WL-tw2"/>
+                            <constraint firstItem="8cx-KZ-6wp" firstAttribute="centerX" secondItem="nBz-yc-FLE" secondAttribute="centerX" id="DYW-jj-mPc"/>
+                            <constraint firstItem="tzt-pL-q4l" firstAttribute="bottom" secondItem="8cx-KZ-6wp" secondAttribute="bottom" constant="5" id="Mrb-9E-VM8"/>
+                            <constraint firstItem="RYs-8m-vCG" firstAttribute="centerX" secondItem="nBz-yc-FLE" secondAttribute="leading" constant="40" id="O08-aJ-NS3"/>
+                            <constraint firstItem="RYs-8m-vCG" firstAttribute="centerY" secondItem="nBz-yc-FLE" secondAttribute="top" constant="40" id="aRq-TN-KF3"/>
+                            <constraint firstItem="8cx-KZ-6wp" firstAttribute="leading" secondItem="tzt-pL-q4l" secondAttribute="leading" constant="5" id="g4P-I3-Nzu"/>
+                            <constraint firstItem="tzt-pL-q4l" firstAttribute="bottom" secondItem="8cx-KZ-6wp" secondAttribute="bottom" constant="5" id="jVQ-xp-icV"/>
+                            <constraint firstItem="8cx-KZ-6wp" firstAttribute="top" secondItem="tzt-pL-q4l" secondAttribute="top" constant="5" id="r1j-tX-a3h"/>
+                            <constraint firstItem="tzt-pL-q4l" firstAttribute="trailing" secondItem="8cx-KZ-6wp" secondAttribute="trailing" constant="5" id="vvo-hE-3li"/>
+                            <constraint firstItem="8cx-KZ-6wp" firstAttribute="top" secondItem="tzt-pL-q4l" secondAttribute="top" constant="5" id="ytW-8O-iPc"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="tzt-pL-q4l"/>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="Sos-Wm-7EY">
+                        <barButtonItem key="leftBarButtonItem" title="Back" style="plain" id="Zj2-7D-abo">
+                            <connections>
+                                <segue destination="Aei-6C-wl4" kind="show" id="aNW-kW-ATy"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="cameraView" destination="8cx-KZ-6wp" id="wEe-RE-YV6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4fT-ss-ymO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2839" y="918"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="cTH-7j-HPD">
+            <objects>
+                <viewController id="f9U-tD-1xU" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FSy-vZ-b9C">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tAH-yk-6yA">
+                                <rect key="frame" x="37" y="184" width="300" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="Ri1-Ar-AYl"/>
+                                    <constraint firstAttribute="width" constant="300" id="gCh-IH-DRt"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오늘 먹을 음식은?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nfI-Px-XwH">
+                                <rect key="frame" x="87" y="124" width="200" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Zwo-iN-TT9"/>
+                                    <constraint firstAttribute="width" constant="200" id="gul-JL-tBU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Seb-GV-jBo">
+                                <rect key="frame" x="57.5" y="508.5" width="100" height="50"/>
+                                <color key="backgroundColor" red="0.85882352941176465" green="0.99607843137254903" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="78R-ck-TsN"/>
+                                    <constraint firstAttribute="width" constant="100" id="KYZ-Yw-BGB"/>
+                                </constraints>
+                                <state key="normal" title="먹는다!"/>
+                                <connections>
+                                    <segue destination="NvT-8o-aSd" kind="show" id="iIT-ot-Ybr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9vm-Im-MFb">
+                                <rect key="frame" x="217.5" y="508.5" width="100" height="50"/>
+                                <color key="backgroundColor" red="0.82421875" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="Iqi-4f-xBX"/>
+                                    <constraint firstAttribute="height" constant="50" id="UlT-J0-hPg"/>
+                                </constraints>
+                                <state key="normal" title="안먹는다!"/>
+                                <connections>
+                                    <segue destination="8Dh-E0-s9W" kind="show" id="Iwc-nR-1HU"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="9vm-Im-MFb" firstAttribute="centerX" secondItem="FSy-vZ-b9C" secondAttribute="centerX" constant="80" id="02l-ki-UgP"/>
+                            <constraint firstItem="Seb-GV-jBo" firstAttribute="centerX" secondItem="FSy-vZ-b9C" secondAttribute="centerX" constant="-80" id="1dv-bd-f9x"/>
+                            <constraint firstItem="Seb-GV-jBo" firstAttribute="centerY" secondItem="FSy-vZ-b9C" secondAttribute="centerY" constant="200" id="4zv-T9-Nix"/>
+                            <constraint firstItem="nfI-Px-XwH" firstAttribute="centerX" secondItem="tAH-yk-6yA" secondAttribute="centerX" id="Cw8-jC-Psh"/>
+                            <constraint firstItem="tAH-yk-6yA" firstAttribute="centerY" secondItem="FSy-vZ-b9C" secondAttribute="centerY" id="D5s-xa-mUp"/>
+                            <constraint firstItem="tAH-yk-6yA" firstAttribute="centerX" secondItem="FSy-vZ-b9C" secondAttribute="centerX" id="fR6-uG-so5"/>
+                            <constraint firstItem="9vm-Im-MFb" firstAttribute="centerY" secondItem="FSy-vZ-b9C" secondAttribute="centerY" constant="200" id="wId-gv-yAH"/>
+                            <constraint firstItem="tAH-yk-6yA" firstAttribute="top" secondItem="nfI-Px-XwH" secondAttribute="bottom" constant="30" id="wwY-KI-tk6"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="msv-6q-AFI"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lx9-XL-LFp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4340" y="918"/>
         </scene>
         <!--Word View Controller-->
         <scene sceneID="iAb-t4-ScX">
@@ -276,7 +408,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wxT-Rl-6BX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5754.3999999999996" y="-1104.1979010494754"/>
+            <point key="canvasLocation" x="7241" y="-403"/>
         </scene>
         <!--Image View Controller-->
         <scene sceneID="Uuu-qk-RbU">
@@ -328,7 +460,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gaN-Oq-oOl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5775.1999999999998" y="-320.68965517241384"/>
+            <point key="canvasLocation" x="7238" y="508"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ewc-Dz-ffm">
@@ -357,7 +489,7 @@
                                 </constraints>
                                 <state key="normal" title="지도보기"/>
                                 <connections>
-                                    <segue destination="NDq-k1-hSe" kind="show" id="fRe-jz-E6J"/>
+                                    <segue destination="Foy-s9-t3U" kind="show" id="5at-jh-DJo"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -373,7 +505,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q3r-y8-ZDb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6749.6000000000004" y="-740.7796101949026"/>
+            <point key="canvasLocation" x="8209" y="87"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="2Ya-WP-vCh">
@@ -401,7 +533,31 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mct-bw-bfj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7554" y="-741"/>
+            <point key="canvasLocation" x="9014" y="85"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="fpc-tC-8I7">
+            <objects>
+                <viewController id="Foy-s9-t3U" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EFa-YA-S8r">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="지도 화면" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mWH-Ab-jgc">
+                                <rect key="frame" x="112" y="269" width="151" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="41"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="XeI-BP-StL"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nYd-XS-t6G" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="9981" y="-209"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="BLL-hQ-iEg">
@@ -419,7 +575,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AXg-vn-Eue" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3887" y="-650"/>
+            <point key="canvasLocation" x="5438" y="156"/>
         </scene>
         <!--Info-->
         <scene sceneID="JW5-R6-Fn4">
@@ -513,7 +669,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8e9-0O-xfL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4815.1999999999998" y="-1104.1979010494754"/>
+            <point key="canvasLocation" x="6302" y="-405"/>
         </scene>
         <!--이미지-->
         <scene sceneID="JZU-RD-Llu">
@@ -532,10 +688,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tmA-68-UJM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4836" y="-320.68965517241384"/>
+            <point key="canvasLocation" x="6302" y="507"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="iIT-ot-Ybr"/>
         <segue reference="Yaf-9h-wXq"/>
+        <segue reference="Iwc-nR-1HU"/>
+        <segue reference="aNW-kW-ATy"/>
     </inferredMetricsTieBreakers>
 </document>

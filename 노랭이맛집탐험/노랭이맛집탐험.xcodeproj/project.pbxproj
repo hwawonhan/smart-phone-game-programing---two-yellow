@@ -22,6 +22,7 @@
 		A197BB8C20BB72070033D8AC /* photo2.png in Resources */ = {isa = PBXBuildFile; fileRef = A197BB8720BB72070033D8AC /* photo2.png */; };
 		A197BB8D20BB72070033D8AC /* photo5.png in Resources */ = {isa = PBXBuildFile; fileRef = A197BB8820BB72070033D8AC /* photo5.png */; };
 		A197BB8E20BB72070033D8AC /* photo1.png in Resources */ = {isa = PBXBuildFile; fileRef = A197BB8920BB72070033D8AC /* photo1.png */; };
+		A1FE844520BC62AA00B857C2 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1FE844420BC62AA00B857C2 /* CameraViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -56,6 +57,7 @@
 		A197BB8820BB72070033D8AC /* photo5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = photo5.png; path = "../../../../Documents/smart phone game programing/실습/ScrollView/ScrollView/photo5.png"; sourceTree = "<group>"; };
 		A197BB8920BB72070033D8AC /* photo1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = photo1.png; path = "../../../../Documents/smart phone game programing/실습/ScrollView/ScrollView/photo1.png"; sourceTree = "<group>"; };
 		A197BB8F20BB722E0033D8AC /* 노랭이맛집탐험-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "노랭이맛집탐험-Bridging-Header.h"; path = "../../../../.Trash/노랭이맛집탐험-Bridging-Header.h"; sourceTree = "<group>"; };
+		A1FE844420BC62AA00B857C2 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 				A126EE5720B813FC009EA2F5 /* SampleData.swift */,
 				A10BC6EA20B9A93E008BF9EB /* SelectMenuViewController.swift */,
 				A197BB8F20BB722E0033D8AC /* 노랭이맛집탐험-Bridging-Header.h */,
+				A1FE844420BC62AA00B857C2 /* CameraViewController.swift */,
 			);
 			path = "노랭이맛집탐험";
 			sourceTree = "<group>";
@@ -192,6 +195,7 @@
 				A171170B20A0455500A540BF /* ViewController.swift in Sources */,
 				A197BB8420BB70C60033D8AC /* ImageViewController.swift in Sources */,
 				A126EE5820B813FC009EA2F5 /* SampleData.swift in Sources */,
+				A1FE844520BC62AA00B857C2 /* CameraViewController.swift in Sources */,
 				A171170920A0455500A540BF /* AppDelegate.swift in Sources */,
 				A10BC6EB20B9A93E008BF9EB /* SelectMenuViewController.swift in Sources */,
 			);
