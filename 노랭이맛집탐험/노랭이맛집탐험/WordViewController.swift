@@ -84,7 +84,7 @@ class WordViewController: UITableViewController, XMLParserDelegate {
     func parser(_ parser: XMLParser, foundCharacters string: String) {
         
         if element.isEqual(to: "title") {
-            name.append(String(string.components(separatedBy: ["<",">","b","/"]).joined()))
+            name.append(String(string.components(separatedBy: ["<",">","b","/", "a", "&", "m", "p", ";"]).joined()))
         } else if element.isEqual(to: "address") {
             adress.append(String(string.components(separatedBy: ["<",">","b","/"]).joined()))
         } else if element.isEqual(to: "category") {

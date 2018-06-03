@@ -13,7 +13,7 @@ class SelectMenuViewController: UIViewController, CLLocationManagerDelegate{
     @IBOutlet weak var currentLocationText: UITextField!
 
     var locationManager : CLLocationManager!
-    var sendlocation = "역곡동"
+    var sendlocation = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -36,10 +36,10 @@ class SelectMenuViewController: UIViewController, CLLocationManagerDelegate{
             
             self.currentLocationText.text = "현재위치:  " + name
             
-            let search = "시"
+            let search = "동"
             let range: Range<String.Index> = name.range(of: search)!
             let location = name.distance(from: name.startIndex, to: range.lowerBound)
-            name.removeFirst(location)
+            name.removeFirst(location - 3)
             self.sendlocation = String(name.components(separatedBy: ["1","2","3","4","5","6","7","8","9","0"]).joined())
             } //전체 주소
         }})

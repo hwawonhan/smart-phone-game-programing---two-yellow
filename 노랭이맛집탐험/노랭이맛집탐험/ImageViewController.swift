@@ -13,12 +13,12 @@ class ImageViewController: UIViewController , UIScrollViewDelegate, XMLParserDel
     @IBOutlet var pageControl: UIPageControl!
     @IBOutlet weak var textview: UITextView!
     
-    var parser = XMLParser()
+    var myparser = XMLParser()
     var posts = NSMutableArray()
-    var elements = NSMutableDictionary()
+    var myelements = NSMutableDictionary()
     var element = NSString()
     var linktitle = NSMutableString()
-    var link = NSMutableString()
+    var mylink = NSMutableString()
     
     var url: String = ""
     
@@ -35,7 +35,9 @@ class ImageViewController: UIViewController , UIScrollViewDelegate, XMLParserDel
     
     func beginParsing() {
         posts = []
-        let api = "https://openapi.naver.com/v1/search/image.xml?query=\(self.location)\(self.name)&display=5&start=1&sort=random"
+        
+        let api = "https://openapi.naver.com/v1/search/image.xml?query=\(location)\(name)&display=5&start=1&sort=sim"
+        
         let encoding = api.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
         let url = URL(string: encoding!)
         var request = URLRequest.init(url: url!)
@@ -54,9 +56,10 @@ class ImageViewController: UIViewController , UIScrollViewDelegate, XMLParserDel
             }
             
             DispatchQueue.main.async {
-                self.parser = XMLParser(data: data!)
-                self.parser.delegate = self
-                self.parser.parse()
+                self.myparser = XMLParser(data: data!)
+                self.myparser.delegate = self
+                self.myparser.parse()
+                self.setimage()
             }
         })
         task.resume()
@@ -65,34 +68,36 @@ class ImageViewController: UIViewController , UIScrollViewDelegate, XMLParserDel
     func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String]) {
         element = elementName as NSString
         if ( elementName as NSString ).isEqual(to: "item") {
-            elements = NSMutableDictionary()
-            elements = [:]
+            myelements = NSMutableDictionary()
+            myelements = [:]
             linktitle = NSMutableString()
             linktitle = ""
-            link = NSMutableString()
-            link = ""
+            mylink = NSMutableString()
+            mylink = ""
         }
     }
     
     func parser(_ parser: XMLParser, foundCharacters string: String)
     {
-        if element.isEqual(to: "title")
-        {
+        if element.isEqual(to: "title") {
             linktitle.append(string)
         } else if element.isEqual(to: "link") {
-            link.append(string)
+            mylink.append(string)
         }
     }
     
     func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?){
         if (elementName as NSString).isEqual(to: "item"){
             if !linktitle.isEqual(nil) {
-                elements.setObject(linktitle, forKey: "title" as NSCopying)
+                myelements.setObject(linktitle, forKey: "title" as NSCopying)
             }
-            if !link.isEqual(nil) {
-                elements.setObject(link, forKey: "link" as NSCopying)
+            if !mylink.isEqual(nil) {
+                myelements.setObject(mylink, forKey: "link" as NSCopying)
             }
-            posts.add(elements)
+            posts.add(myelements)
+            print(posts.count)
+            print("들어옴")
+            
         }
         
     }
@@ -124,8 +129,8 @@ class ImageViewController: UIViewController , UIScrollViewDelegate, XMLParserDel
     }
     
     func setimage() {
-        let url = URL(string:"http://post.phinf.naver.net/MjAxNzAxMDhfMjc5/MDAxNDgzODg3MTkxNDMz.S53txrwXgtL9aU2SN4jhtaK3Yb1FgPFBoxTsvU8EM54g.512v347vrGjee5vsDaeTDLfnO_zxoBimkGj_pRMC7Xcg.JPEG/I-TWqDCDJ-JzDkBGDnY84vNx0PU0.jpg")
-        //let url = URL(string: ((posts1.object(at: 0) as AnyObject).value(forKey: "link") as! String))
+        /*
+        let url = URL(string:"https://image-logo.alba.kr/%2Fdata_image2%2Fcomlogo%2F201605%2F2016052020020254461_0.JPG")
         if let data = try? Data(contentsOf: url!)
         {
             let image: UIImage = UIImage(data: data)!
@@ -138,40 +143,47 @@ class ImageViewController: UIViewController , UIScrollViewDelegate, XMLParserDel
             ]
         }
 
+        */
+        
+        for post in posts {
+            if let url = URL(string: (post as AnyObject).value(forKey: "link") as! NSString as String) {
+                if let data = try? Data(contentsOf: url)
+                {
+                    let image: UIImage = UIImage(data: data)!
+                    self.pageImages.append(image)
+                    print(pageImages.count)
+                }
+            }
+        }
+        let pageCount = self.pageImages.count
+        self.pageControl.currentPage = 0
+        self.pageControl.numberOfPages = pageCount
+        
+        for _ in 0..<pageCount {
+            self.pageViews.append(nil)
+        }
+        
+        let pageScrollViewSize = self.scrollView.frame.size
+        self.scrollView.contentSize = CGSize(width: pageScrollViewSize.width * CGFloat(self.pageImages.count),
+                                             height: pageScrollViewSize.height)
+        
+        self.loadVisiblePages()
     }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        beginParsing()
         SettableviewData()
-        setimage()
-        print((posts.object(at: 0) as AnyObject).value(forKey: "title") as! NSString as String)
-        /*pageImages = [ UIImage(data: try! Data(contentsOf: URL(string: (posts.object(at: 0) as AnyObject).value(forKey: "link") as! String)!))!,
-                       UIImage(data: try! Data(contentsOf: URL(string: (posts.object(at: 0) as AnyObject).value(forKey: "link") as! String)!))!,
-                       UIImage(data: try! Data(contentsOf: URL(string: (posts.object(at: 0) as AnyObject).value(forKey: "link") as! String)!))!,
-                       UIImage(data: try! Data(contentsOf: URL(string: (posts.object(at: 0) as AnyObject).value(forKey: "link") as! String)!))!,
-                       UIImage(data: try! Data(contentsOf: URL(string: (posts.object(at: 0) as AnyObject).value(forKey: "link") as! String)!))!]
-        setimage()
-        pageImages = [
-            UIImage(named: "photo1.png")!,
-            UIImage(named: "photo2.png")!,
-            UIImage(named: "photo3.png")!,
-            UIImage(named: "photo4.png")!,
-            UIImage(named: "photo5.png")!
-        ]*/
-        let pageCount = pageImages.count
+        /*
+         pageImages = [
+         UIImage(named: "photo1.png")!,
+         UIImage(named: "photo2.png")!,
+         UIImage(named: "photo3.png")!,
+         UIImage(named: "photo4.png")!,
+         UIImage(named: "photo5.png")!
+         ]*/
         
-        pageControl.currentPage = 0
-        pageControl.numberOfPages = pageCount
-        
-        for _ in 0..<pageCount {
-            pageViews.append(nil)
-        }
-        
-        let pageScrollViewSize = scrollView.frame.size
-        scrollView.contentSize = CGSize(width: pageScrollViewSize.width * CGFloat(pageImages.count),
-                                        height: pageScrollViewSize.height)
-        
-        loadVisiblePages()
     }
     
     func loadPage (_ page: Int) {
@@ -223,8 +235,10 @@ class ImageViewController: UIViewController , UIScrollViewDelegate, XMLParserDel
             loadPage(index)
         }
         
-        for index in lastPage + 1 ..< pageImages.count + 1{
+        if(self.pageImages.count > 0){
+        for index in lastPage + 1 ..< self.pageImages.count + 1{
             purgePage(index)
+            }
         }
     }
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
