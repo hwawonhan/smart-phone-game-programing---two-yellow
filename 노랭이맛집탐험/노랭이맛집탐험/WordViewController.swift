@@ -18,17 +18,19 @@ class WordViewController: UITableViewController, XMLParserDelegate {
     var adress = NSMutableString()
     var category = NSMutableString()
     var telephone = NSMutableString()
-
+    var location:String = ""
+    var foodtype:String = ""
+    var roadadress = NSMutableString()
+    var index:Int = 1
     var foodRestaurants:[Restaurant] = foodData
     func beginParsing()
     {
         
         posts = []
-        let coment = "정왕동 일식"
-        let api = "https://openapi.naver.com/v1/search/local.xml?query=\(coment)&display=30&start=1&sort=random"
+        let api = "https://openapi.naver.com/v1/search/local.xml?query=\(location)\(foodtype)&display=30&start=1&sort=random"
         let encoding = api.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
         let url = URL(string: encoding!)
-        
+        print(api)
         var request = URLRequest.init(url: url!)
         request.setValue("1qO9XJIT5mR1O3sz_u6J", forHTTPHeaderField: "X-Naver-Client-Id")
         request.setValue("bZcbo3uiSX", forHTTPHeaderField: "X-Naver-Client-Secret")
@@ -75,23 +77,29 @@ class WordViewController: UITableViewController, XMLParserDelegate {
             category = ""
             telephone = NSMutableString()
             telephone = ""
+            roadadress = NSMutableString()
+            roadadress = ""
         }
     }
     
     func parser(_ parser: XMLParser, foundCharacters string: String) {
+        
         if element.isEqual(to: "title") {
-            name.append(string)
+            name.append(String(string.components(separatedBy: ["<",">","b","/"]).joined()))
         } else if element.isEqual(to: "address") {
-            adress.append(string)
+            adress.append(String(string.components(separatedBy: ["<",">","b","/"]).joined()))
         } else if element.isEqual(to: "category") {
-            category.append(string)
+            category.append(String(string.components(separatedBy: ["<",">","b","/"]).joined()))
         } else if element.isEqual(to: "telephone") {
-            telephone.append(string)
+            telephone.append(String(string.components(separatedBy: ["<",">","b","/"]).joined()))
+        } else if element.isEqual(to: "roadAddress") {
+            roadadress.append(String(string.components(separatedBy: ["<",">","b","/"]).joined()))
         }
     }
     
     func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?)
     {
+        
         if (elementName as NSString).isEqual(to: "item") {
             if !name.isEqual(nil) {
                 elements.setObject(name, forKey: "title" as NSCopying)
@@ -105,7 +113,27 @@ class WordViewController: UITableViewController, XMLParserDelegate {
             if !element.isEqual(nil) {
                 elements.setObject(telephone, forKey: "telephone" as NSCopying)
             }
+            if !element.isEqual(nil) {
+                elements.setObject(roadadress, forKey: "roadAddress" as NSCopying)
+            }
             posts.add(elements)
+        }
+    }
+    
+    @IBAction func doneToSelectViewController(segue:UIStoryboardSegue) {
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ToDetailView" {
+            if let navController = segue.destination as? UINavigationController {
+                if let imageviewcontroller = navController.topViewController as?
+                    ImageViewController {
+                    imageviewcontroller.posts = self.posts
+                    imageviewcontroller.myindex = self.index
+                    imageviewcontroller.location = self.location
+                }
+            }
         }
     }
     
@@ -131,11 +159,12 @@ class WordViewController: UITableViewController, XMLParserDelegate {
         return posts.count
     }
 
-    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        index = indexPath.row
+    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        
         cell.textLabel?.text = (posts.object(at: indexPath.row) as AnyObject).value(forKey: "title") as! NSString as String
         cell.detailTextLabel?.text = (posts.object(at: indexPath.row) as AnyObject).value(forKey: "address") as! NSString as String
         return cell

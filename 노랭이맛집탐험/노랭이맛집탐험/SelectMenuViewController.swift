@@ -9,14 +9,14 @@
 import UIKit
 import CoreLocation
 
-class SelectMenuViewController: UIViewController, CLLocationManagerDelegate {
+class SelectMenuViewController: UIViewController, CLLocationManagerDelegate{
     @IBOutlet weak var currentLocationText: UITextField!
-    
+
     var locationManager : CLLocationManager!
-    
+    var sendlocation = "역곡동"
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         locationManager = CLLocationManager()
         locationManager.delegate = self
@@ -33,7 +33,14 @@ class SelectMenuViewController: UIViewController, CLLocationManagerDelegate {
         let locale = Locale(identifier: "Ko-kr") //원하는 언어의 나라 코드를 넣어주시면 됩니다.
         geocoder.reverseGeocodeLocation(findLocation, preferredLocale: locale, completionHandler: {(placemarks, error) in if let address: [CLPlacemark] = placemarks { if var name: String = address.last?.name {
             name.removeFirst(6)
+            
             self.currentLocationText.text = "현재위치:  " + name
+            
+            let search = "동"
+            let range: Range<String.Index> = name.range(of: search)!
+            let location = name.distance(from: name.startIndex, to: range.lowerBound)
+            name.removeFirst(location - 3)
+            self.sendlocation = String(name.components(separatedBy: ["1","2","3","4","5","6","7","8","9","0"]).joined())
             } //전체 주소
         }})
     }
@@ -43,7 +50,84 @@ class SelectMenuViewController: UIViewController, CLLocationManagerDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-
+    @IBAction func doneToSelectViewController(segue:UIStoryboardSegue) {
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "HansikSegueToTableView" {
+            if let navController = segue.destination as? UINavigationController {
+                    if let wordviewController = navController.topViewController as?
+                    WordViewController {
+                    wordviewController.location = self.sendlocation
+                    wordviewController.foodtype = "한식"
+                }
+            }
+        }
+        if segue.identifier == "lisikSegueToTableView" {
+            if let navController = segue.destination as? UINavigationController {
+                if let wordviewController = navController.topViewController as?
+                    WordViewController {
+                    wordviewController.location = self.sendlocation
+                    wordviewController.foodtype = "일식"
+                }
+            }
+        }
+        if segue.identifier == "jungsikSegueToTableView" {
+            if let navController = segue.destination as? UINavigationController {
+                if let wordviewController = navController.topViewController as?
+                    WordViewController {
+                    wordviewController.location = self.sendlocation
+                    wordviewController.foodtype = "중식"
+                }
+            }
+        }
+        if segue.identifier == "cikienSegueToTable" {
+            if let navController = segue.destination as? UINavigationController {
+                if let wordviewController = navController.topViewController as?
+                    WordViewController {
+                    wordviewController.location = self.sendlocation
+                    wordviewController.foodtype = "치킨"
+                }
+            }
+        }
+        if segue.identifier == "plzzaSegueToTableView" {
+            if let navController = segue.destination as? UINavigationController {
+                if let wordviewController = navController.topViewController as?
+                    WordViewController {
+                    wordviewController.location = self.sendlocation
+                    wordviewController.foodtype = "피자"
+                }
+            }
+        }
+        if segue.identifier == "dsertSegueToTableView" {
+            if let navController = segue.destination as? UINavigationController {
+                if let wordviewController = navController.topViewController as?
+                    WordViewController {
+                    wordviewController.location = self.sendlocation
+                    wordviewController.foodtype = "디저트"
+                }
+            }
+        }
+        if segue.identifier == "yasikSegueToTableView" {
+            if let navController = segue.destination as? UINavigationController {
+                if let wordviewController = navController.topViewController as?
+                    WordViewController {
+                    wordviewController.location = self.sendlocation
+                    wordviewController.foodtype = "야식"
+                }
+            }
+        }
+        if segue.identifier == "bunsickSegueToTableView" {
+            if let navController = segue.destination as? UINavigationController {
+                if let wordviewController = navController.topViewController as?
+                    WordViewController {
+                    wordviewController.location = self.sendlocation
+                    wordviewController.foodtype = "분식"
+                }
+            }
+        }
+    }
     /*
     // MARK: - Navigation
 
