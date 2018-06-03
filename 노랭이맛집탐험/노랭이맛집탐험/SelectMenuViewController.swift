@@ -36,10 +36,10 @@ class SelectMenuViewController: UIViewController, CLLocationManagerDelegate{
             
             self.currentLocationText.text = "현재위치:  " + name
             
-            let search = "동"
+            let search = "시"
             let range: Range<String.Index> = name.range(of: search)!
             let location = name.distance(from: name.startIndex, to: range.lowerBound)
-            name.removeFirst(location - 3)
+            name.removeFirst(location)
             self.sendlocation = String(name.components(separatedBy: ["1","2","3","4","5","6","7","8","9","0"]).joined())
             } //전체 주소
         }})

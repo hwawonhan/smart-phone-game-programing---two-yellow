@@ -8,35 +8,36 @@
 
 import UIKit
 
-class ImageViewController: UIViewController , UIScrollViewDelegate {
+class ImageViewController: UIViewController , UIScrollViewDelegate, XMLParserDelegate {
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var pageControl: UIPageControl!
-    @IBOutlet weak var mydata: UITableView!
+    @IBOutlet weak var textview: UITextView!
     
     var parser = XMLParser()
     var posts = NSMutableArray()
     var elements = NSMutableDictionary()
     var element = NSString()
+    var linktitle = NSMutableString()
     var link = NSMutableString()
     
-    var location:String = ""
+    var url: String = ""
     
+    var location:String = ""
     var name:String = ""
     var adress:String = ""
     var category:String = ""
     var telephone:String = ""
     var roadadress:String = ""
-    var myindex:Int = 1
     
     var pageImages: [UIImage] = []
     var pageViews: [UIImageView?] = []
-    func beginParsing()
-    {
+    
+    
+    func beginParsing() {
         posts = []
-        let api = "https://openapi.naver.com/v1/search/image.xml?query=\(location)\(name)&display=5&start=1&sort=random"
+        let api = "https://openapi.naver.com/v1/search/image.xml?query=\(self.location)\(self.name)&display=5&start=1&sort=random"
         let encoding = api.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
         let url = URL(string: encoding!)
-        print(api)
         var request = URLRequest.init(url: url!)
         request.setValue("1qO9XJIT5mR1O3sz_u6J", forHTTPHeaderField: "X-Naver-Client-Id")
         request.setValue("bZcbo3uiSX", forHTTPHeaderField: "X-Naver-Client-Secret")
@@ -54,74 +55,109 @@ class ImageViewController: UIViewController , UIScrollViewDelegate {
             
             DispatchQueue.main.async {
                 self.parser = XMLParser(data: data!)
+                self.parser.delegate = self
                 self.parser.parse()
             }
         })
         task.resume()
-        
     }
     
-    
-    
-    
-    func parser(_ parser: XMLParser, didStartElement elementName:
-        String, namespaceURI: String?, qualifiedName qName: String?,
-                attributes attributeDict: [String : String])
-    {
+    func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String]) {
         element = elementName as NSString
-        if (elementName as NSString).isEqual(to: "item")
-        {
+        if ( elementName as NSString ).isEqual(to: "item") {
             elements = NSMutableDictionary()
             elements = [:]
+            linktitle = NSMutableString()
+            linktitle = ""
             link = NSMutableString()
             link = ""
         }
     }
     
-    func parser(_ parser: XMLParser, foundCharacters string: String) {
-        
-        if element.isEqual(to: "link") {
-            link.append(String(string.components(separatedBy: ["<",">","b","/"]).joined()))
+    func parser(_ parser: XMLParser, foundCharacters string: String)
+    {
+        if element.isEqual(to: "title")
+        {
+            linktitle.append(string)
+        } else if element.isEqual(to: "link") {
+            link.append(string)
         }
     }
     
-    func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?)
-    {
-        
-        if (elementName as NSString).isEqual(to: "item") {
-            if !name.isEqual(nil) {
-                elements.setObject(name, forKey: "link" as NSCopying)
+    func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?){
+        if (elementName as NSString).isEqual(to: "item"){
+            if !linktitle.isEqual(nil) {
+                elements.setObject(linktitle, forKey: "title" as NSCopying)
+            }
+            if !link.isEqual(nil) {
+                elements.setObject(link, forKey: "link" as NSCopying)
             }
             posts.add(elements)
         }
+        
     }
     
-    func loadInitData() {
-        name = (posts.object(at: myindex) as AnyObject).value(forKey: "title") as! NSString as String
-        adress = (posts.object(at: myindex) as AnyObject).value(forKey: "address") as! NSString as String
-        category = (posts.object(at: myindex) as AnyObject).value(forKey: "category") as! NSString as String
-        telephone = (posts.object(at: myindex) as AnyObject).value(forKey: "telephone") as! NSString as String
-        roadadress = (posts.object(at: myindex) as AnyObject).value(forKey: "roadAddress") as! NSString as String
-        print(name)
-    }
+    
     
     func SettableviewData() {
-       
+        textview.text.append("가게이름")
+        textview.text.append("\n")
+        textview.text.append(name)
+        textview.text.append("\n")
+        textview.text.append("음식종류")
+        textview.text.append("\n")
+        textview.text.append(category)
+        textview.text.append("\n")
+        textview.text.append("전화번호")
+        textview.text.append("\n")
+        textview.text.append(telephone)
+        textview.text.append("\n")
+        textview.text.append("주소")
+        textview.text.append("\n")
+        textview.text.append(adress)
+        textview.text.append("\n")
+        textview.text.append("도로명주소")
+        textview.text.append("\n")
+        textview.text.append(roadadress)
+        textview.text.append("\n")
+        
     }
     
-    
+    func setimage() {
+        let url = URL(string:"http://post.phinf.naver.net/MjAxNzAxMDhfMjc5/MDAxNDgzODg3MTkxNDMz.S53txrwXgtL9aU2SN4jhtaK3Yb1FgPFBoxTsvU8EM54g.512v347vrGjee5vsDaeTDLfnO_zxoBimkGj_pRMC7Xcg.JPEG/I-TWqDCDJ-JzDkBGDnY84vNx0PU0.jpg")
+        //let url = URL(string: ((posts1.object(at: 0) as AnyObject).value(forKey: "link") as! String))
+        if let data = try? Data(contentsOf: url!)
+        {
+            let image: UIImage = UIImage(data: data)!
+            pageImages = [
+                image,
+                UIImage(named: "photo1")!,
+                UIImage(named: "photo2")!,
+                UIImage(named: "photo3")!,
+                UIImage(named: "photo4")!
+            ]
+        }
+
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadInitData()
-        beginParsing()
         SettableviewData()
-        pageImages = [ UIImage(named: "photo1.png")!,
-                       UIImage(named: "photo2.png")!,
-                       UIImage(named: "photo3.png")!,
-                       UIImage(named: "photo4.png")!,
-                       UIImage(named: "photo5.png")!]
-        
+        setimage()
+        print((posts.object(at: 0) as AnyObject).value(forKey: "title") as! NSString as String)
+        /*pageImages = [ UIImage(data: try! Data(contentsOf: URL(string: (posts.object(at: 0) as AnyObject).value(forKey: "link") as! String)!))!,
+                       UIImage(data: try! Data(contentsOf: URL(string: (posts.object(at: 0) as AnyObject).value(forKey: "link") as! String)!))!,
+                       UIImage(data: try! Data(contentsOf: URL(string: (posts.object(at: 0) as AnyObject).value(forKey: "link") as! String)!))!,
+                       UIImage(data: try! Data(contentsOf: URL(string: (posts.object(at: 0) as AnyObject).value(forKey: "link") as! String)!))!,
+                       UIImage(data: try! Data(contentsOf: URL(string: (posts.object(at: 0) as AnyObject).value(forKey: "link") as! String)!))!]
+        setimage()
+        pageImages = [
+            UIImage(named: "photo1.png")!,
+            UIImage(named: "photo2.png")!,
+            UIImage(named: "photo3.png")!,
+            UIImage(named: "photo4.png")!,
+            UIImage(named: "photo5.png")!
+        ]*/
         let pageCount = pageImages.count
         
         pageControl.currentPage = 0

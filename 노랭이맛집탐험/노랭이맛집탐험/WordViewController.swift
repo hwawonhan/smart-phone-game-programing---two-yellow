@@ -14,6 +14,7 @@ class WordViewController: UITableViewController, XMLParserDelegate {
     var posts = NSMutableArray()
     var elements = NSMutableDictionary()
     var element = NSString()
+    
     var name = NSMutableString()
     var adress = NSMutableString()
     var category = NSMutableString()
@@ -21,8 +22,7 @@ class WordViewController: UITableViewController, XMLParserDelegate {
     var location:String = ""
     var foodtype:String = ""
     var roadadress = NSMutableString()
-    var index:Int = 1
-    var foodRestaurants:[Restaurant] = foodData
+
     func beginParsing()
     {
         
@@ -30,7 +30,6 @@ class WordViewController: UITableViewController, XMLParserDelegate {
         let api = "https://openapi.naver.com/v1/search/local.xml?query=\(location)\(foodtype)&display=30&start=1&sort=random"
         let encoding = api.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
         let url = URL(string: encoding!)
-        print(api)
         var request = URLRequest.init(url: url!)
         request.setValue("1qO9XJIT5mR1O3sz_u6J", forHTTPHeaderField: "X-Naver-Client-Id")
         request.setValue("bZcbo3uiSX", forHTTPHeaderField: "X-Naver-Client-Secret")
@@ -95,6 +94,7 @@ class WordViewController: UITableViewController, XMLParserDelegate {
         } else if element.isEqual(to: "roadAddress") {
             roadadress.append(String(string.components(separatedBy: ["<",">","b","/"]).joined()))
         }
+        
     }
     
     func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?)
@@ -129,8 +129,14 @@ class WordViewController: UITableViewController, XMLParserDelegate {
             if let navController = segue.destination as? UINavigationController {
                 if let imageviewcontroller = navController.topViewController as?
                     ImageViewController {
-                    imageviewcontroller.posts = self.posts
-                    imageviewcontroller.myindex = self.index
+                    if let cell = sender as? UITableViewCell {
+                        let indexPath = tableView.indexPath(for: cell)
+                        imageviewcontroller.name = (posts.object(at: (indexPath?.row)!) as AnyObject).value(forKey: "title") as! NSString as String
+                        imageviewcontroller.adress = (posts.object(at: (indexPath?.row)!) as AnyObject).value(forKey: "address") as! NSString as String
+                        imageviewcontroller.category = (posts.object(at: (indexPath?.row)!) as AnyObject).value(forKey: "category") as! NSString as String
+                        imageviewcontroller.telephone = (posts.object(at: (indexPath?.row)!) as AnyObject).value(forKey: "telephone") as! NSString as String
+                        imageviewcontroller.roadadress = (posts.object(at: (indexPath?.row)!) as AnyObject).value(forKey: "roadAddress") as! NSString as String
+                        }
                     imageviewcontroller.location = self.location
                 }
             }
@@ -157,10 +163,6 @@ class WordViewController: UITableViewController, XMLParserDelegate {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return posts.count
-    }
-
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        index = indexPath.row
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
