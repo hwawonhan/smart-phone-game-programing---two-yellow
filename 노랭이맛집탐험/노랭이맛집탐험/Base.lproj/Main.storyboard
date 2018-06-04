@@ -204,7 +204,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" textAlignment="right" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="NsV-Yn-x7r">
-                                <rect key="frame" x="65" y="40" width="300" height="20"/>
+                                <rect key="frame" x="65" y="55" width="300" height="20"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" notEnabled="YES"/>
                                 </accessibility>
@@ -216,6 +216,11 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X6k-Yv-J7N">
+                                <rect key="frame" x="297" y="25" width="63" height="27"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <state key="normal" title="위치업데이트"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -225,7 +230,7 @@
                             <constraint firstItem="4X6-Gc-8q7" firstAttribute="centerX" secondItem="62V-vI-JtL" secondAttribute="centerX" constant="75" id="AA3-ZF-ZP9"/>
                             <constraint firstItem="Eay-mb-pvf" firstAttribute="centerX" secondItem="62V-vI-JtL" secondAttribute="centerX" constant="75" id="Gze-Y5-a3u"/>
                             <constraint firstItem="Ivi-pm-IX9" firstAttribute="centerY" secondItem="62V-vI-JtL" secondAttribute="centerY" constant="-180" id="IZh-QJ-wzi"/>
-                            <constraint firstItem="NsV-Yn-x7r" firstAttribute="top" secondItem="aQl-PX-J0x" secondAttribute="top" constant="20" id="IiK-WJ-PqN"/>
+                            <constraint firstItem="NsV-Yn-x7r" firstAttribute="top" secondItem="aQl-PX-J0x" secondAttribute="top" constant="35" id="IiK-WJ-PqN"/>
                             <constraint firstItem="wVO-ZJ-x2W" firstAttribute="centerY" secondItem="62V-vI-JtL" secondAttribute="centerY" constant="-110" id="J8P-NE-Cai"/>
                             <constraint firstItem="aQl-PX-J0x" firstAttribute="trailing" secondItem="NsV-Yn-x7r" secondAttribute="trailing" constant="10" id="Jqn-sm-GL0"/>
                             <constraint firstItem="Di5-df-FMa" firstAttribute="centerX" secondItem="62V-vI-JtL" secondAttribute="centerX" constant="-75" id="L6Q-1n-0tc"/>
@@ -234,7 +239,9 @@
                             <constraint firstItem="Eay-mb-pvf" firstAttribute="centerY" secondItem="62V-vI-JtL" secondAttribute="centerY" constant="30" id="crs-xb-Nm1"/>
                             <constraint firstItem="wY4-Ar-tk6" firstAttribute="centerY" secondItem="62V-vI-JtL" secondAttribute="centerY" constant="-180" id="emk-UQ-X3i"/>
                             <constraint firstItem="qK5-s6-ucl" firstAttribute="centerY" secondItem="62V-vI-JtL" secondAttribute="centerY" constant="175" id="ey6-e1-gaq"/>
+                            <constraint firstItem="X6k-Yv-J7N" firstAttribute="top" secondItem="aQl-PX-J0x" secondAttribute="top" constant="5" id="hqd-qE-vfa"/>
                             <constraint firstItem="qK5-s6-ucl" firstAttribute="centerX" secondItem="62V-vI-JtL" secondAttribute="centerX" id="kQq-Kd-eJX"/>
+                            <constraint firstItem="aQl-PX-J0x" firstAttribute="trailing" secondItem="X6k-Yv-J7N" secondAttribute="trailing" constant="15" id="lb2-7E-K8h"/>
                             <constraint firstItem="5Px-VA-S0v" firstAttribute="centerY" secondItem="62V-vI-JtL" secondAttribute="centerY" constant="-40" id="ooe-Ha-4lx"/>
                             <constraint firstItem="Di5-df-FMa" firstAttribute="centerY" secondItem="62V-vI-JtL" secondAttribute="centerY" constant="30" id="vAL-cx-9M8"/>
                             <constraint firstItem="4X6-Gc-8q7" firstAttribute="centerY" secondItem="62V-vI-JtL" secondAttribute="centerY" constant="-40" id="wgp-Rt-QhY"/>
@@ -694,8 +701,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="epO-Dd-Y6n"/>
-        <segue reference="Iwc-nR-1HU"/>
+        <segue reference="23D-0O-iD3"/>
+        <segue reference="jrD-5L-Aui"/>
         <segue reference="aNW-kW-ATy"/>
     </inferredMetricsTieBreakers>
 </document>

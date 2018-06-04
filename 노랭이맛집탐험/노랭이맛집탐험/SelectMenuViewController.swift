@@ -20,31 +20,37 @@ class SelectMenuViewController: UIViewController, CLLocationManagerDelegate{
         // Do any additional setup after loading the view.
         locationManager = CLLocationManager()
         locationManager.delegate = self
-        locationManager.requestWhenInUseAuthorization() //권한 요청
+        locationManager.requestWhenInUseAuthorization()
+        
+        if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
+            
+            locationManager.startUpdatingLocation()
+            
+            let coor = locationManager.location?.coordinate
+            
+            //self.currentLocationText.text = String(describing: coor?.latitude)
+            
+            let findLocation = CLLocation(latitude: coor!.latitude, longitude: coor!.longitude)
+            let geocoder = CLGeocoder()
+            let locale = Locale(identifier: "Ko-kr") //원하는 언어의 나라 코드를 넣어주시면 됩니다.
+            geocoder.reverseGeocodeLocation(findLocation, preferredLocale: locale, completionHandler: {(placemarks, error) in if let address: [CLPlacemark] = placemarks { if var name: String = address.last?.name {
+                name.removeFirst(6)
+                
+                self.currentLocationText.text = "현재위치:  " + name
+                
+                let search = "동"
+                let range: Range<String.Index> = name.range(of: search)!
+                let location = name.distance(from: name.startIndex, to: range.lowerBound)
+                name.removeFirst(location - 3)
+                self.sendlocation = String(name.components(separatedBy: ["1","2","3","4","5","6","7","8","9","0"]).joined())
+                } //전체 주소
+                }})
+        } else {
+            self.currentLocationText.text = "위치를 업데이트 해주세요."
+        }
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.startUpdatingLocation()
-        
-        let coor = locationManager.location?.coordinate
-        
-        //self.currentLocationText.text = String(describing: coor?.latitude)
-        
-        let findLocation = CLLocation(latitude: coor!.latitude, longitude: coor!.longitude)
-        let geocoder = CLGeocoder()
-        let locale = Locale(identifier: "Ko-kr") //원하는 언어의 나라 코드를 넣어주시면 됩니다.
-        geocoder.reverseGeocodeLocation(findLocation, preferredLocale: locale, completionHandler: {(placemarks, error) in if let address: [CLPlacemark] = placemarks { if var name: String = address.last?.name {
-            name.removeFirst(6)
-            
-            self.currentLocationText.text = "현재위치:  " + name
-            
-            let search = "동"
-            let range: Range<String.Index> = name.range(of: search)!
-            let location = name.distance(from: name.startIndex, to: range.lowerBound)
-            name.removeFirst(location - 3)
-            self.sendlocation = String(name.components(separatedBy: ["1","2","3","4","5","6","7","8","9","0"]).joined())
-            } //전체 주소
-        }})
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
