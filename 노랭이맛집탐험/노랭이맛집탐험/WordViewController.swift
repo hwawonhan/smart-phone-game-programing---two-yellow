@@ -22,6 +22,8 @@ class WordViewController: UITableViewController, XMLParserDelegate {
     var location:String = ""
     var foodtype:String = ""
     var roadadress = NSMutableString()
+    var mapx = NSMutableString()
+    var mapy = NSMutableString()
 
     func beginParsing()
     {
@@ -78,6 +80,10 @@ class WordViewController: UITableViewController, XMLParserDelegate {
             telephone = ""
             roadadress = NSMutableString()
             roadadress = ""
+            mapx = NSMutableString()
+            mapx = ""
+            mapy = NSMutableString()
+            mapy = ""
         }
     }
     
@@ -93,6 +99,10 @@ class WordViewController: UITableViewController, XMLParserDelegate {
             telephone.append(String(string.components(separatedBy: ["<",">","b","/"]).joined()))
         } else if element.isEqual(to: "roadAddress") {
             roadadress.append(String(string.components(separatedBy: ["<",">","b","/"]).joined()))
+        } else if element.isEqual(to: "mapx") {
+            mapx.append(string)
+        } else if element.isEqual(to: "mapy") {
+            mapy.append(string)
         }
         
     }
@@ -116,6 +126,12 @@ class WordViewController: UITableViewController, XMLParserDelegate {
             if !element.isEqual(nil) {
                 elements.setObject(roadadress, forKey: "roadAddress" as NSCopying)
             }
+            if !element.isEqual(nil) {
+                elements.setObject(mapx, forKey: "mapx" as NSCopying)
+            }
+            if !element.isEqual(nil) {
+                elements.setObject(mapy, forKey: "mapy" as NSCopying)
+            }
             posts.add(elements)
         }
     }
@@ -136,7 +152,10 @@ class WordViewController: UITableViewController, XMLParserDelegate {
                         imageviewcontroller.category = (posts.object(at: (indexPath?.row)!) as AnyObject).value(forKey: "category") as! NSString as String
                         imageviewcontroller.telephone = (posts.object(at: (indexPath?.row)!) as AnyObject).value(forKey: "telephone") as! NSString as String
                         imageviewcontroller.roadadress = (posts.object(at: (indexPath?.row)!) as AnyObject).value(forKey: "roadAddress") as! NSString as String
-                        }
+                        
+                        imageviewcontroller.mapx = (posts.object(at: (indexPath?.row)!) as AnyObject).value(forKey: "mapx") as! NSString as String
+                        imageviewcontroller.mapy = (posts.object(at: (indexPath?.row)!) as AnyObject).value(forKey: "mapy") as! NSString as String
+                    }
                     imageviewcontroller.location = self.location
                 }
             }

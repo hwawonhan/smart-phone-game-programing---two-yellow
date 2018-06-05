@@ -28,7 +28,8 @@ class ImageViewController: UIViewController , UIScrollViewDelegate, XMLParserDel
     var category:String = ""
     var telephone:String = ""
     var roadadress:String = ""
-    
+    var mapx:String = ""
+    var mapy:String = ""
     var pageImages: [UIImage] = []
     var pageViews: [UIImageView?] = []
     
@@ -129,22 +130,6 @@ class ImageViewController: UIViewController , UIScrollViewDelegate, XMLParserDel
     }
     
     func setimage() {
-        /*
-        let url = URL(string:"https://image-logo.alba.kr/%2Fdata_image2%2Fcomlogo%2F201605%2F2016052020020254461_0.JPG")
-        if let data = try? Data(contentsOf: url!)
-        {
-            let image: UIImage = UIImage(data: data)!
-            pageImages = [
-                image,
-                UIImage(named: "photo1")!,
-                UIImage(named: "photo2")!,
-                UIImage(named: "photo3")!,
-                UIImage(named: "photo4")!
-            ]
-        }
-
-        */
-        
         for post in posts {
             if let url = URL(string: (post as AnyObject).value(forKey: "link") as! NSString as String) {
                 if let data = try? Data(contentsOf: url)
@@ -170,20 +155,25 @@ class ImageViewController: UIViewController , UIScrollViewDelegate, XMLParserDel
         self.loadVisiblePages()
     }
     
+    @IBAction func doneToSelectViewController(segue:UIStoryboardSegue) {
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ToMapView" {
+            if let destination = segue.destination as? MapViewController {
+                destination.mapX = self.mapx
+                destination.mapY = self.mapy
+            }
+        }
+    }
+        
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         beginParsing()
-        SettableviewData()
-        /*
-         pageImages = [
-         UIImage(named: "photo1.png")!,
-         UIImage(named: "photo2.png")!,
-         UIImage(named: "photo3.png")!,
-         UIImage(named: "photo4.png")!,
-         UIImage(named: "photo5.png")!
-         ]*/
-        
+        SettableviewData()        
     }
     
     func loadPage (_ page: Int) {

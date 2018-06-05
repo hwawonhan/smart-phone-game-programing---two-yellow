@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -665,7 +665,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="지도보기" id="eOx-xU-Zdg">
                             <connections>
-                                <segue destination="NDq-k1-hSe" kind="show" id="yzS-B8-Knh"/>
+                                <segue destination="NDq-k1-hSe" kind="show" identifier="ToMapView" id="dvK-Ko-27H"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -680,33 +680,35 @@
             </objects>
             <point key="canvasLocation" x="8276" y="152.47376311844079"/>
         </scene>
-        <!--View Controller-->
+        <!--Map View Controller-->
         <scene sceneID="2Ya-WP-vCh">
             <objects>
-                <viewController id="NDq-k1-hSe" sceneMemberID="viewController">
+                <viewController id="NDq-k1-hSe" customClass="MapViewController" customModule="___________________" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TJc-Xp-ukm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ql9-r1-oO6">
-                                <rect key="frame" x="0.0" y="20" width="375" height="627"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xvD-6X-j8G">
+                                <rect key="frame" x="0.0" y="32" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="375" id="4Le-mz-pEF"/>
-                                    <constraint firstAttribute="height" constant="627" id="alL-9G-dEV"/>
+                                    <constraint firstAttribute="height" constant="667" id="FNa-02-WQD"/>
+                                    <constraint firstAttribute="width" constant="375" id="d0B-KR-bZ0"/>
                                 </constraints>
-                            </mapView>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="ql9-r1-oO6" firstAttribute="centerY" secondItem="TJc-Xp-ukm" secondAttribute="centerY" id="LeN-mN-Hmw"/>
-                            <constraint firstItem="ql9-r1-oO6" firstAttribute="centerX" secondItem="TJc-Xp-ukm" secondAttribute="centerX" id="Vsa-js-C9q"/>
+                            <constraint firstItem="xvD-6X-j8G" firstAttribute="centerX" secondItem="cla-w0-6Sf" secondAttribute="centerX" id="I0H-Tr-ZDN"/>
+                            <constraint firstItem="xvD-6X-j8G" firstAttribute="centerY" secondItem="cla-w0-6Sf" secondAttribute="centerY" id="e2y-N0-lYc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cla-w0-6Sf"/>
                     </view>
+                    <navigationItem key="navigationItem" id="PPI-5J-odM"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mct-bw-bfj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="9183.2000000000007" y="153.37331334332833"/>
+            <point key="canvasLocation" x="10122.4" y="152.47376311844079"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="fpc-tC-8I7">
@@ -730,7 +732,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nYd-XS-t6G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="11858.4" y="-209.14542728635683"/>
+            <point key="canvasLocation" x="12797.6" y="-209.14542728635683"/>
         </scene>
         <!--Info-->
         <scene sceneID="JW5-R6-Fn4">
@@ -865,7 +867,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="jrD-5L-Aui"/>
-        <segue reference="23D-0O-iD3"/>
+        <segue reference="fHo-gx-arB"/>
         <segue reference="aNW-kW-ATy"/>
         <segue reference="mNP-WN-vpb"/>
     </inferredMetricsTieBreakers>
