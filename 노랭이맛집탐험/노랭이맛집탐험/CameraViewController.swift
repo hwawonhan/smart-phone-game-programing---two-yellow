@@ -8,14 +8,58 @@
 
 import UIKit
 import AVFoundation
+import CoreImage
 
 class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate{
     //  카메라 영상 표시 위한 뷰
+
+    @IBOutlet weak var TimerLabel: UILabel!
+    @IBOutlet weak var ScoreLabel: UILabel!
+    var count = 0
+    var seconds = 0
+    var timer = Timer()
+    
+    @IBOutlet weak var FinishPopUp: UIStackView!
+    
+    @IBOutlet weak var Food1: UIImageView!
+    @IBOutlet weak var Food2: UIImageView!
+    @IBOutlet weak var Food3: UIImageView!
+    @IBOutlet weak var Food4: UIImageView!
+    @IBOutlet weak var Food5: UIImageView!
+    @IBOutlet weak var Food6: UIImageView!
+    @IBOutlet weak var Food7: UIImageView!
+    @IBOutlet weak var Food8: UIImageView!
     
     @IBOutlet weak var cameraView: UIView!
     var captureSession: AVCaptureSession!
     var stillImageOutput: AVCapturePhotoOutput?
     var previewLayer: AVCaptureVideoPreviewLayer?
+    
+    @IBAction func StartAction(_ sender: UIButton) {
+        setupGame()
+    }
+    
+    func setupGame() {
+        seconds = 30
+        count = 0
+        
+        TimerLabel.text = "Time: \(seconds)"
+        ScoreLabel.text = "Score: \n\(count)"
+        
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.subtractTime), userInfo: nil, repeats: true)
+    }
+    
+    @objc func subtractTime() {
+        seconds -= 1
+        TimerLabel.text = "Time: \(seconds)"
+        
+        if(seconds == 0) {
+            timer.invalidate()
+            
+            FinishPopUp.alpha = 1
+            
+        }
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         captureSession = AVCaptureSession()
@@ -69,5 +113,6 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate{
     }
     
     
+  
 }
 
