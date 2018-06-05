@@ -13,6 +13,7 @@ import CoreImage
 class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate{
     //  카메라 영상 표시 위한 뷰
 
+    @IBOutlet weak var StartButton: UIButton!
     @IBOutlet weak var TimerLabel: UILabel!
     @IBOutlet weak var ScoreLabel: UILabel!
     var count = 0
@@ -37,6 +38,7 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate{
     
     @IBAction func StartAction(_ sender: UIButton) {
         setupGame()
+        StartButton.isUserInteractionEnabled = false
     }
     
     func setupGame() {
@@ -56,6 +58,7 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate{
         if(seconds == 0) {
             timer.invalidate()
             
+            FinishPopUp.isUserInteractionEnabled = true
             FinishPopUp.alpha = 1
             
         }
@@ -105,6 +108,7 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        FinishPopUp.isUserInteractionEnabled = false
     }
     
     override func didReceiveMemoryWarning() {
