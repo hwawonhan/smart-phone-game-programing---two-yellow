@@ -33,8 +33,6 @@ class MapViewController: UIViewController, NMapViewDelegate, NMapPOIdataOverlayD
         
         WHEN("Katec 좌표로 변환했을 때")
         let geoPoint = convert.convert(sourceType: .KATEC, destinationType: .WGS_84, geoPoint: katecPoint)
-        
-        //THEN("변환된 좌표가 x: 127.00000003159674, y: 38.000000111014 과 소숫점 8자리까지 일치해야 한다.")
         d = geoPoint!
         if let mapView = mapView {
             // set the delegate for map view
@@ -47,7 +45,7 @@ class MapViewController: UIViewController, NMapViewDelegate, NMapPOIdataOverlayD
                 view.addSubview(mapView)
         }
         mapView?.setBuiltInAppControl(true)
-        
+        marker()
     }
     public func onMapView(_ mapView: NMapView!, initHandler error: NMapError!) {
         if (error == nil) { // success
@@ -57,11 +55,40 @@ class MapViewController: UIViewController, NMapViewDelegate, NMapPOIdataOverlayD
             
             // set for retina display
             mapView.setMapEnlarged(true, mapHD: true)
+            
         } else { // fail
             //print("onMapView:initHandler: \(error.description)")
         }
     }
-    
+    func marker () {
+        
+            
+            if let mapOverlayManager = mapView?.mapOverlayManager {
+                
+                // create POI data overlay
+                if let poiDataOverlay = mapOverlayManager.newPOIdataOverlay() {
+                    
+                    poiDataOverlay.initPOIdata(1)
+                    
+                    let poiItem = poiDataOverlay.addPOIitem(atLocation: NGeoPoint(longitude: d.x, latitude: d.y), title: "Touch & Drag to Move", type: UserPOIflagTypeDefault, iconIndex: 0, with: nil)
+                    
+                    // set floating mode
+                    poiItem?.setPOIflagMode(.touch)
+                    
+                    // hide right button on callout
+                    poiItem?.hasRightCalloutAccessory = false
+                    
+                    poiDataOverlay.endPOIdata()
+                    
+                    // select item
+                    poiDataOverlay.selectPOIitem(at: 0, moveToCenter: true)
+                    
+                    // show all POI data
+                    poiDataOverlay.showAllPOIdata()
+                }
+            }
+        
+    }
     open func onMapOverlay(_ poiDataOverlay: NMapPOIdataOverlay!, imageForOverlayItem poiItem: NMapPOIitem!, selected: Bool) -> UIImage! {
         return NMapViewResources.imageWithType(poiItem.poiFlagType, selected: selected)
     }
