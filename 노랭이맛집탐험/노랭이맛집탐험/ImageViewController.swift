@@ -11,10 +11,9 @@ import UIKit
 class ImageViewController: UIViewController , UIScrollViewDelegate, XMLParserDelegate {
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var pageControl: UIPageControl!
-    @IBOutlet weak var textview: UITextView!
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var categoryLabel: UILabel!
-    @IBOutlet weak var telLabel: UILabel!
+    @IBOutlet weak var telLabel: UIButton!
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var RoadLabel: UILabel!
     var myparser = XMLParser()
@@ -24,6 +23,7 @@ class ImageViewController: UIViewController , UIScrollViewDelegate, XMLParserDel
     var linktitle = NSMutableString()
     var mylink = NSMutableString()
     
+    @IBOutlet weak var NOimageLabel: UILabel!
     var url: String = ""
     
     var location:String = ""
@@ -109,12 +109,21 @@ class ImageViewController: UIViewController , UIScrollViewDelegate, XMLParserDel
     }
     
     
+    @IBAction func ClickTelButton(_ sender: Any) {
+        if let phoneCallURL = URL(string: "tel://\(telephone)") {
+            let application:UIApplication = UIApplication.shared
+            if (application.canOpenURL(phoneCallURL)) {
+                application.open(phoneCallURL, options: [:], completionHandler: nil)
+            }
+        }
+        
+    }
     
     func SettableviewData() {
         
         nameLabel.text = name
         categoryLabel.text = category
-        telLabel.text = telephone
+        telLabel.setTitle(telephone, for: .normal)
         locationLabel.text = adress
         RoadLabel.text = roadadress
         
@@ -128,6 +137,13 @@ class ImageViewController: UIViewController , UIScrollViewDelegate, XMLParserDel
                     let image: UIImage = UIImage(data: data)!
                     self.pageImages.append(image)
                     print(pageImages.count)
+                    if (pageImages.count < 1)
+                    {
+                        NOimageLabel.isHidden = false
+                    }
+                    else {
+                        NOimageLabel.isHidden = true
+                    }
                 }
             }
         }
@@ -165,7 +181,8 @@ class ImageViewController: UIViewController , UIScrollViewDelegate, XMLParserDel
     override func viewDidLoad() {
         super.viewDidLoad()
         beginParsing()
-        SettableviewData()        
+        SettableviewData()
+        
     }
     
     func loadPage (_ page: Int) {
