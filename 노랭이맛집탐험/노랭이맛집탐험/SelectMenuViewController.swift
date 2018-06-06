@@ -14,6 +14,7 @@ class SelectMenuViewController: UIViewController, CLLocationManagerDelegate{
 
     var locationManager : CLLocationManager!
     var sendlocation = ""
+    var LocationPoint = CGPoint()
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -27,7 +28,7 @@ class SelectMenuViewController: UIViewController, CLLocationManagerDelegate{
             locationManager.startUpdatingLocation()
             
             let coor = locationManager.location?.coordinate
-            
+            LocationPoint = CGPoint(x: (coor?.longitude)!, y: (coor?.latitude)!)
             //self.currentLocationText.text = String(describing: coor?.latitude)
             
             let findLocation = CLLocation(latitude: coor!.latitude, longitude: coor!.longitude)
@@ -67,6 +68,7 @@ class SelectMenuViewController: UIViewController, CLLocationManagerDelegate{
                     WordViewController {
                     wordviewController.location = self.sendlocation
                     wordviewController.foodtype = "한식"
+                    wordviewController.mymap = GeographicPoint(x: Double(self.LocationPoint.x), y: Double(self.LocationPoint.y))
                 }
             }
         }
@@ -76,6 +78,7 @@ class SelectMenuViewController: UIViewController, CLLocationManagerDelegate{
                     WordViewController {
                     wordviewController.location = self.sendlocation
                     wordviewController.foodtype = "일식"
+                    wordviewController.mymap = GeographicPoint(x: Double(self.LocationPoint.x), y: Double(self.LocationPoint.y))
                 }
             }
         }
@@ -85,6 +88,7 @@ class SelectMenuViewController: UIViewController, CLLocationManagerDelegate{
                     WordViewController {
                     wordviewController.location = self.sendlocation
                     wordviewController.foodtype = "중식"
+                    wordviewController.mymap = GeographicPoint(x: Double(self.LocationPoint.x), y: Double(self.LocationPoint.y))
                 }
             }
         }
@@ -94,6 +98,7 @@ class SelectMenuViewController: UIViewController, CLLocationManagerDelegate{
                     WordViewController {
                     wordviewController.location = self.sendlocation
                     wordviewController.foodtype = "치킨"
+                    wordviewController.mymap = GeographicPoint(x: Double(self.LocationPoint.x), y: Double(self.LocationPoint.y))
                 }
             }
         }
@@ -103,6 +108,7 @@ class SelectMenuViewController: UIViewController, CLLocationManagerDelegate{
                     WordViewController {
                     wordviewController.location = self.sendlocation
                     wordviewController.foodtype = "피자"
+                    wordviewController.mymap = GeographicPoint(x: Double(self.LocationPoint.x), y: Double(self.LocationPoint.y))
                 }
             }
         }
@@ -112,6 +118,7 @@ class SelectMenuViewController: UIViewController, CLLocationManagerDelegate{
                     WordViewController {
                     wordviewController.location = self.sendlocation
                     wordviewController.foodtype = "디저트"
+                    wordviewController.mymap = GeographicPoint(x: Double(self.LocationPoint.x), y: Double(self.LocationPoint.y))
                 }
             }
         }
@@ -121,6 +128,7 @@ class SelectMenuViewController: UIViewController, CLLocationManagerDelegate{
                     WordViewController {
                     wordviewController.location = self.sendlocation
                     wordviewController.foodtype = "야식"
+                    wordviewController.mymap = GeographicPoint(x: Double(self.LocationPoint.x), y: Double(self.LocationPoint.y))
                 }
             }
         }
@@ -130,6 +138,7 @@ class SelectMenuViewController: UIViewController, CLLocationManagerDelegate{
                     WordViewController {
                     wordviewController.location = self.sendlocation
                     wordviewController.foodtype = "분식"
+                    wordviewController.mymap = GeographicPoint(x: Double(self.LocationPoint.x), y: Double(self.LocationPoint.y))
                 }
             }
         }

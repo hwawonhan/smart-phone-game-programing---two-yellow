@@ -10,6 +10,7 @@ import UIKit
 
 class WordViewController: UITableViewController, XMLParserDelegate {
     @IBOutlet var tbData: UITableView!
+    
     var parser = XMLParser()
     var posts = NSMutableArray()
     var elements = NSMutableDictionary()
@@ -25,6 +26,8 @@ class WordViewController: UITableViewController, XMLParserDelegate {
     var mapx = NSMutableString()
     var mapy = NSMutableString()
 
+    var mymap = GeographicPoint()
+    
     func beginParsing()
     {
         
@@ -155,6 +158,8 @@ class WordViewController: UITableViewController, XMLParserDelegate {
                         
                         imageviewcontroller.mapx = (posts.object(at: (indexPath?.row)!) as AnyObject).value(forKey: "mapx") as! NSString as String
                         imageviewcontroller.mapy = (posts.object(at: (indexPath?.row)!) as AnyObject).value(forKey: "mapy") as! NSString as String
+                        
+                        imageviewcontroller.myLocation = self.mymap
                     }
                     imageviewcontroller.location = self.location
                 }

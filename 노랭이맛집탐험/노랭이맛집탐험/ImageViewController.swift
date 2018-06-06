@@ -12,7 +12,11 @@ class ImageViewController: UIViewController , UIScrollViewDelegate, XMLParserDel
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var pageControl: UIPageControl!
     @IBOutlet weak var textview: UITextView!
-    
+    @IBOutlet var nameLabel: UILabel!
+    @IBOutlet var categoryLabel: UILabel!
+    @IBOutlet weak var telLabel: UILabel!
+    @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet weak var RoadLabel: UILabel!
     var myparser = XMLParser()
     var posts = NSMutableArray()
     var myelements = NSMutableDictionary()
@@ -33,6 +37,7 @@ class ImageViewController: UIViewController , UIScrollViewDelegate, XMLParserDel
     var pageImages: [UIImage] = []
     var pageViews: [UIImageView?] = []
     
+    var myLocation = GeographicPoint()
     
     func beginParsing() {
         posts = []
@@ -106,26 +111,12 @@ class ImageViewController: UIViewController , UIScrollViewDelegate, XMLParserDel
     
     
     func SettableviewData() {
-        textview.text.append("가게이름")
-        textview.text.append("\n")
-        textview.text.append(name)
-        textview.text.append("\n")
-        textview.text.append("음식종류")
-        textview.text.append("\n")
-        textview.text.append(category)
-        textview.text.append("\n")
-        textview.text.append("전화번호")
-        textview.text.append("\n")
-        textview.text.append(telephone)
-        textview.text.append("\n")
-        textview.text.append("주소")
-        textview.text.append("\n")
-        textview.text.append(adress)
-        textview.text.append("\n")
-        textview.text.append("도로명주소")
-        textview.text.append("\n")
-        textview.text.append(roadadress)
-        textview.text.append("\n")
+        
+        nameLabel.text = name
+        categoryLabel.text = category
+        telLabel.text = telephone
+        locationLabel.text = adress
+        RoadLabel.text = roadadress
         
     }
     
@@ -164,6 +155,7 @@ class ImageViewController: UIViewController , UIScrollViewDelegate, XMLParserDel
             if let destination = segue.destination as? MapViewController {
                 destination.mapX = self.mapx
                 destination.mapY = self.mapy
+                destination.cLocation = self.myLocation
             }
         }
     }

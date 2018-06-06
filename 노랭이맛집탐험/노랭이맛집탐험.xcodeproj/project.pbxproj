@@ -29,6 +29,9 @@
 		A1C3D95920C51F290073431A /* photo5.png in Resources */ = {isa = PBXBuildFile; fileRef = A1C3D95420C51F290073431A /* photo5.png */; };
 		A1C3D95A20C51F290073431A /* photo2.png in Resources */ = {isa = PBXBuildFile; fileRef = A1C3D95520C51F290073431A /* photo2.png */; };
 		A1C3D95B20C51F290073431A /* photo1.png in Resources */ = {isa = PBXBuildFile; fileRef = A1C3D95620C51F290073431A /* photo1.png */; };
+		A1ED117720C837BC00535C3F /* AAA.otf in Resources */ = {isa = PBXBuildFile; fileRef = A1ED117620C837BC00535C3F /* AAA.otf */; };
+		A1ED117920C837C400535C3F /* AAAA.otf in Resources */ = {isa = PBXBuildFile; fileRef = A1ED117820C837C400535C3F /* AAAA.otf */; };
+		A1ED117B20C838F600535C3F /* HoonlefthanderR.otf in Resources */ = {isa = PBXBuildFile; fileRef = A1ED117A20C838F600535C3F /* HoonlefthanderR.otf */; };
 		A1FE844520BC62AA00B857C2 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1FE844420BC62AA00B857C2 /* CameraViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -123,6 +126,9 @@
 		A1C3D95420C51F290073431A /* photo5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = photo5.png; sourceTree = "<group>"; };
 		A1C3D95520C51F290073431A /* photo2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = photo2.png; sourceTree = "<group>"; };
 		A1C3D95620C51F290073431A /* photo1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = photo1.png; sourceTree = "<group>"; };
+		A1ED117620C837BC00535C3F /* AAA.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AAA.otf; sourceTree = "<group>"; };
+		A1ED117820C837C400535C3F /* AAAA.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AAAA.otf; sourceTree = "<group>"; };
+		A1ED117A20C838F600535C3F /* HoonlefthanderR.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = HoonlefthanderR.otf; sourceTree = "<group>"; };
 		A1FE844420BC62AA00B857C2 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -160,7 +166,6 @@
 		A171170720A0455400A540BF /* 노랭이맛집탐험 */ = {
 			isa = PBXGroup;
 			children = (
-				A1B4BA6C20C6D01F00CB630D /* Resource */,
 				A1B4BA2720C69C6700CB630D /* 노랭이맛집탐험-Bridging-Header.h */,
 				A197BB8320BB70C60033D8AC /* ImageViewController.swift */,
 				A171170820A0455500A540BF /* AppDelegate.swift */,
@@ -179,6 +184,7 @@
 				A1B4BA3020C6CD2F00CB630D /* MapViewController.swift */,
 				A1B4BA4E20C6CF0E00CB630D /* NMapViewResources.swift */,
 				A1B4BAAD20C71C6800CB630D /* GeoConverter.swift */,
+				A1B4BA6C20C6D01F00CB630D /* Resource */,
 			);
 			path = "노랭이맛집탐험";
 			sourceTree = "<group>";
@@ -194,6 +200,9 @@
 		A1B4BA6C20C6D01F00CB630D /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				A1ED117A20C838F600535C3F /* HoonlefthanderR.otf */,
+				A1ED117620C837BC00535C3F /* AAA.otf */,
+				A1ED117820C837C400535C3F /* AAAA.otf */,
 				A1C3D95620C51F290073431A /* photo1.png */,
 				A1C3D95520C51F290073431A /* photo2.png */,
 				A1C3D95220C51F280073431A /* photo3.png */,
@@ -420,11 +429,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1C3D95B20C51F290073431A /* photo1.png in Resources */,
+				A1ED117920C837C400535C3F /* AAAA.otf in Resources */,
 				A171171320A0455A00A540BF /* LaunchScreen.storyboard in Resources */,
 				A171171020A0455A00A540BF /* Assets.xcassets in Resources */,
+				A1ED117B20C838F600535C3F /* HoonlefthanderR.otf in Resources */,
 				A171170E20A0455500A540BF /* Main.storyboard in Resources */,
 				A1C3D95A20C51F290073431A /* photo2.png in Resources */,
 				A1C3D95820C51F290073431A /* photo4.png in Resources */,
+				A1ED117720C837BC00535C3F /* AAA.otf in Resources */,
 				A1C3D95920C51F290073431A /* photo5.png in Resources */,
 				A1C3D95720C51F290073431A /* photo3.png in Resources */,
 			);
