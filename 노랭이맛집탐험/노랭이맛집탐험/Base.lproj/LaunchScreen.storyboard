@@ -1,10 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="BMDOHYEON_ttf.ttf">
+            <string>BMDoHyeon</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="EHf-IW-A2E">
@@ -13,13 +22,53 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="노랭이둘의" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gTe-Sf-fw6">
+                                <rect key="frame" x="37.5" y="260" width="300" height="47"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="47" id="HuH-YP-Ku8"/>
+                                    <constraint firstAttribute="width" constant="300" id="gnI-h6-AeO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="BMDoHyeon" family="BM DoHyeon" pointSize="39"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="맛집탐험" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5pZ-Zm-W40">
+                                <rect key="frame" x="37.5" y="310" width="300" height="47"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="47" id="RR6-PC-q0l"/>
+                                    <constraint firstAttribute="width" constant="300" id="zrC-vQ-cKU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="BMDoHyeon" family="BM DoHyeon" pointSize="39"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="같이 가볼까요?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E8N-Im-Emy">
+                                <rect key="frame" x="37.5" y="360" width="300" height="47"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="47" id="B5u-H8-P7U"/>
+                                    <constraint firstAttribute="width" constant="300" id="EoK-QO-N4C"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="BMDoHyeon" family="BM DoHyeon" pointSize="39"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" cyan="0.0" magenta="0.0" yellow="0.39761262619999999" black="0.0" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="gTe-Sf-fw6" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-50" id="3Kq-IT-omj"/>
+                            <constraint firstItem="5pZ-Zm-W40" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="I0i-Rb-AEY"/>
+                            <constraint firstItem="E8N-Im-Emy" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="50" id="PMV-6p-n2k"/>
+                            <constraint firstItem="5pZ-Zm-W40" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="X0y-te-m4F"/>
+                            <constraint firstItem="E8N-Im-Emy" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="aui-lO-3lG"/>
+                            <constraint firstItem="gTe-Sf-fw6" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="m4D-vc-nEz"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
     </scenes>
 </document>

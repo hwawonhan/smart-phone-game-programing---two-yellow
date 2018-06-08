@@ -71,7 +71,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" cyan="0.0" magenta="0.0" yellow="0.39761262621198384" black="0.0" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                         <constraints>
                             <constraint firstItem="xtO-K7-Fbt" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-150" id="9wj-C2-qqO"/>
                             <constraint firstItem="7eG-cx-hG3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DP0-F2-1nY"/>
@@ -105,9 +105,9 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="lZp-mf-hFN"/>
                                     <constraint firstAttribute="height" constant="50" id="rPr-LF-dFx"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="BMJUA" family="BM JUA_TTF" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="BMJUA" family="BM JUA_TTF" pointSize="24"/>
                                 <state key="normal" title="한식">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleColor" cyan="0.0" magenta="0.0" yellow="0.0" black="0.90940316378230779" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                                 </state>
                                 <connections>
                                     <segue destination="Fh3-Jk-Hst" kind="show" identifier="HansikSegueToTableView" id="fHo-gx-arB"/>
@@ -120,9 +120,9 @@
                                     <constraint firstAttribute="width" secondItem="wY4-Ar-tk6" secondAttribute="height" multiplier="2:1" id="hlf-FS-hCD"/>
                                     <constraint firstAttribute="height" constant="50" id="wiq-rP-MWZ"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="BMJUA" family="BM JUA_TTF" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="BMJUA" family="BM JUA_TTF" pointSize="24"/>
                                 <state key="normal" title="일식">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleColor" cyan="0.0" magenta="0.0" yellow="0.0" black="0.90940316378230779" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                                 </state>
                                 <connections>
                                     <segue destination="Fh3-Jk-Hst" kind="show" identifier="lisikSegueToTableView" id="23D-0O-iD3"/>
@@ -135,9 +135,9 @@
                                     <constraint firstAttribute="height" constant="50" id="LpQ-qy-5pw"/>
                                     <constraint firstAttribute="width" secondItem="Hqg-bW-xxb" secondAttribute="height" multiplier="2:1" id="tTB-HZ-cHP"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="BMJUA" family="BM JUA_TTF" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="BMJUA" family="BM JUA_TTF" pointSize="24"/>
                                 <state key="normal" title="중식">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleColor" cyan="0.0" magenta="0.0" yellow="0.0" black="0.90940316378230779" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                                 </state>
                                 <connections>
                                     <segue destination="Fh3-Jk-Hst" kind="show" identifier="jungsikSegueToTableView" id="qn5-3B-kMK"/>
@@ -150,9 +150,9 @@
                                     <constraint firstAttribute="width" secondItem="wVO-ZJ-x2W" secondAttribute="height" multiplier="2:1" id="WVI-7D-cJl"/>
                                     <constraint firstAttribute="height" constant="50" id="cTp-XP-RDc"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="BMJUA" family="BM JUA_TTF" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="BMJUA" family="BM JUA_TTF" pointSize="24"/>
                                 <state key="normal" title="치킨">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleColor" cyan="0.0" magenta="0.0" yellow="0.0" black="0.90940316378230779" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                                 </state>
                                 <connections>
                                     <segue destination="Fh3-Jk-Hst" kind="show" identifier="cikienSegueToTable" id="aKT-Jx-MWu"/>
@@ -165,9 +165,9 @@
                                     <constraint firstAttribute="height" constant="50" id="Mbd-QW-osa"/>
                                     <constraint firstAttribute="width" secondItem="5Px-VA-S0v" secondAttribute="height" multiplier="2:1" id="tUv-HL-g2V"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="BMJUA" family="BM JUA_TTF" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="BMJUA" family="BM JUA_TTF" pointSize="24"/>
                                 <state key="normal" title="피자">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleColor" cyan="0.0" magenta="0.0" yellow="0.0" black="0.90940316378230779" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                                 </state>
                                 <connections>
                                     <segue destination="Fh3-Jk-Hst" kind="show" identifier="plzzaSegueToTableView" id="xcT-zr-ZZO"/>
@@ -180,9 +180,9 @@
                                     <constraint firstAttribute="width" secondItem="4X6-Gc-8q7" secondAttribute="height" multiplier="2:1" id="q4M-Em-a4T"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="upC-ZB-YSf"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="BMJUA" family="BM JUA_TTF" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="BMJUA" family="BM JUA_TTF" pointSize="24"/>
                                 <state key="normal" title="분식">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleColor" cyan="0.0" magenta="0.0" yellow="0.0" black="0.90940316378230779" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                                 </state>
                                 <connections>
                                     <segue destination="Fh3-Jk-Hst" kind="show" identifier="bunsickSegueToTableView" id="znz-lF-xO9"/>
@@ -195,9 +195,9 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="sdh-GM-xx3"/>
                                     <constraint firstAttribute="width" secondItem="Di5-df-FMa" secondAttribute="height" multiplier="2:1" id="zKA-iT-kdW"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="BMJUA" family="BM JUA_TTF" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="BMJUA" family="BM JUA_TTF" pointSize="24"/>
                                 <state key="normal" title="디저트">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleColor" cyan="0.0" magenta="0.0" yellow="0.0" black="0.90940316378230779" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                                 </state>
                                 <connections>
                                     <segue destination="Fh3-Jk-Hst" kind="show" identifier="dsertSegueToTableView" id="Eiy-6Z-Gex"/>
@@ -210,9 +210,9 @@
                                     <constraint firstAttribute="height" constant="50" id="idQ-sn-M1A"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="jPg-bG-djo"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="BMJUA" family="BM JUA_TTF" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="BMJUA" family="BM JUA_TTF" pointSize="24"/>
                                 <state key="normal" title="야식">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleColor" cyan="0.0" magenta="0.0" yellow="0.0" black="0.90940316378230779" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                                 </state>
                                 <connections>
                                     <segue destination="Fh3-Jk-Hst" kind="show" identifier="yasikSegueToTableView" id="tcr-QI-dp4"/>
@@ -254,7 +254,7 @@
                                 </state>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="wY4-Ar-tk6" firstAttribute="centerX" secondItem="62V-vI-JtL" secondAttribute="centerX" constant="75" id="3aH-2Z-Ohb"/>
                             <constraint firstItem="Ivi-pm-IX9" firstAttribute="centerX" secondItem="62V-vI-JtL" secondAttribute="centerX" constant="-75" id="5W7-CV-t2R"/>
@@ -581,22 +581,22 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NLG-fP-h36">
-                                            <rect key="frame" x="16" y="11" width="48.5" height="23"/>
+                                            <rect key="frame" x="16" y="13" width="38" height="18"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" name="BMJUA" family="BM JUA_TTF" pointSize="23"/>
+                                            <fontDescription key="fontDescription" name="BMJUA" family="BM JUA_TTF" pointSize="18"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Mov-4U-cZc">
-                                            <rect key="frame" x="16" y="34" width="52.5" height="15"/>
+                                            <rect key="frame" x="16" y="33" width="45.5" height="13"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" name="BMJUA" family="BM JUA_TTF" pointSize="15"/>
+                                            <fontDescription key="fontDescription" name="BMJUA" family="BM JUA_TTF" pointSize="13"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <segue destination="nVr-S0-wAg" kind="show" identifier="ToDetailView" id="C5P-Pk-wFG"/>
                                 </connections>
@@ -637,6 +637,8 @@
                                     <constraint firstAttribute="width" constant="100" id="Y9t-7v-7eO"/>
                                     <constraint firstAttribute="height" constant="37" id="i4T-7U-lFG"/>
                                 </constraints>
+                                <color key="pageIndicatorTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="currentPageIndicatorTintColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </pageControl>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jun-eB-IUR" customClass="ScrollViewContainr" customModule="___________________" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="72" width="375" height="256"/>
@@ -674,7 +676,7 @@
                                     <constraint firstAttribute="width" constant="150" id="hxp-ID-58o"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="BMJUA" family="BM JUA_TTF" pointSize="21"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" cyan="0.0" magenta="0.0" yellow="0.0" black="0.90940316379999997" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="카테고리 :" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wWz-9B-mAg">
@@ -684,7 +686,7 @@
                                     <constraint firstAttribute="height" constant="25" id="SPc-wh-NRs"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="BMJUA" family="BM JUA_TTF" pointSize="21"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" cyan="0.0" magenta="0.0" yellow="0.0" black="0.90940316379999997" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="전화번호 :" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ey9-NB-fSu">
@@ -694,7 +696,7 @@
                                     <constraint firstAttribute="height" constant="25" id="mVb-zA-Qo7"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="BMJUA" family="BM JUA_TTF" pointSize="21"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" cyan="0.0" magenta="0.0" yellow="0.0" black="0.90940316379999997" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="주소 :" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PZg-R0-wRv">
@@ -704,7 +706,7 @@
                                     <constraint firstAttribute="height" constant="25" id="vhF-rz-oh9"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="BMJUA" family="BM JUA_TTF" pointSize="21"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" cyan="0.0" magenta="0.0" yellow="0.0" black="0.90940316379999997" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="도로명 주소: " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L4L-fd-wEJ">
@@ -714,7 +716,7 @@
                                     <constraint firstAttribute="height" constant="25" id="uC8-HI-1Xk"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="BMJUA" family="BM JUA_TTF" pointSize="21"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" cyan="0.0" magenta="0.0" yellow="0.0" black="0.90940316379999997" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="러러러러러러러러러러러러럴러러러럴러러러러러" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BKm-Ux-Mg5">
@@ -723,8 +725,8 @@
                                     <constraint firstAttribute="height" constant="38" id="Eze-2P-O2a"/>
                                     <constraint firstAttribute="width" constant="136" id="ecK-3V-Q3q"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="BMJUA" family="BM JUA_TTF" pointSize="13"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="BMJUA" family="BM JUA_TTF" pointSize="15"/>
+                                <color key="textColor" cyan="0.0" magenta="0.0" yellow="0.0" black="0.90940316379999997" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="러러러러러러러러러러러러럴러러러럴러러러러러" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kbu-DK-qfW">
@@ -733,28 +735,28 @@
                                     <constraint firstAttribute="height" constant="38" id="dVD-DT-QGC"/>
                                     <constraint firstAttribute="width" constant="136" id="qLt-t6-f2G"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="BMJUA" family="BM JUA_TTF" pointSize="13"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="BMJUA" family="BM JUA_TTF" pointSize="15"/>
+                                <color key="textColor" cyan="0.0" magenta="0.0" yellow="0.0" black="0.90940316379999997" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="러러러러러러러러러러러러럴러러러럴러러러러러" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mCE-bj-WBu">
-                                <rect key="frame" x="189.5" y="539.5" width="136" height="38"/>
+                                <rect key="frame" x="187.5" y="539.5" width="150" height="38"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="38" id="t2W-Js-Kn1"/>
-                                    <constraint firstAttribute="width" constant="136" id="vCl-Ou-ZaX"/>
+                                    <constraint firstAttribute="width" constant="150" id="vCl-Ou-ZaX"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="BMJUA" family="BM JUA_TTF" pointSize="13"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="BMJUA" family="BM JUA_TTF" pointSize="15"/>
+                                <color key="textColor" cyan="0.0" magenta="0.0" yellow="0.0" black="0.90940316379999997" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="러러러러러러러러러러러러럴러러러럴러러러러러" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CBD-ET-HGu">
-                                <rect key="frame" x="189.5" y="589.5" width="136" height="38"/>
+                                <rect key="frame" x="187.5" y="588.5" width="150" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="38" id="XjS-ml-NsX"/>
-                                    <constraint firstAttribute="width" constant="136" id="a0j-Z0-N8U"/>
+                                    <constraint firstAttribute="height" constant="50" id="XjS-ml-NsX"/>
+                                    <constraint firstAttribute="width" constant="150" id="a0j-Z0-N8U"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="BMJUA" family="BM JUA_TTF" pointSize="13"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="BMJUA" family="BM JUA_TTF" pointSize="15"/>
+                                <color key="textColor" cyan="0.0" magenta="0.0" yellow="0.0" black="0.90940316379999997" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IJn-Hl-Ciu">
@@ -763,9 +765,9 @@
                                     <constraint firstAttribute="height" constant="38" id="FjM-b1-nnf"/>
                                     <constraint firstAttribute="width" constant="136" id="MVb-Uf-eAn"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="BMDoHyeon" family="BM DoHyeon" pointSize="12"/>
+                                <fontDescription key="fontDescription" name="BMDoHyeon" family="BM DoHyeon" pointSize="13"/>
                                 <state key="normal" title="032-333-3333">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="ClickTelButton:" destination="jWm-J9-Rpj" eventType="touchUpInside" id="OHH-rD-p97"/>
@@ -778,10 +780,11 @@
                                     <constraint firstAttribute="width" constant="281.5" id="mon-N2-dko"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="BMJUA" family="BM JUA_TTF" pointSize="26"/>
+                                <color key="textColor" cyan="0.0" magenta="0.0" yellow="0.0" black="0.90940316379999997" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="0U1-Rb-Hrq" firstAttribute="centerX" secondItem="P3h-uu-Yti" secondAttribute="centerX" constant="-80" id="0Zb-Sg-NVX"/>
                             <constraint firstItem="flC-1k-yuZ" firstAttribute="centerY" secondItem="P3h-uu-Yti" secondAttribute="top" constant="200" id="0ef-Ob-Mff"/>
@@ -791,7 +794,7 @@
                             <constraint firstItem="Jun-eB-IUR" firstAttribute="centerX" secondItem="P3h-uu-Yti" secondAttribute="centerX" id="3gS-ju-bMP"/>
                             <constraint firstItem="BKm-Ux-Mg5" firstAttribute="centerY" secondItem="P3h-uu-Yti" secondAttribute="centerY" constant="75" id="K4G-QZ-wEI"/>
                             <constraint firstItem="L4L-fd-wEJ" firstAttribute="centerX" secondItem="P3h-uu-Yti" secondAttribute="centerX" constant="-80" id="KfH-Lq-WtR"/>
-                            <constraint firstItem="CBD-ET-HGu" firstAttribute="centerY" secondItem="P3h-uu-Yti" secondAttribute="centerY" constant="275" id="LoF-pF-bcH"/>
+                            <constraint firstItem="CBD-ET-HGu" firstAttribute="centerY" secondItem="P3h-uu-Yti" secondAttribute="centerY" constant="280" id="LoF-pF-bcH"/>
                             <constraint firstItem="flC-1k-yuZ" firstAttribute="centerX" secondItem="P3h-uu-Yti" secondAttribute="centerX" id="LwB-uc-Wqn"/>
                             <constraint firstItem="Q3L-3K-yjA" firstAttribute="centerY" secondItem="P3h-uu-Yti" secondAttribute="centerY" constant="20" id="Mzk-Qr-9po"/>
                             <constraint firstItem="mCE-bj-WBu" firstAttribute="centerY" secondItem="P3h-uu-Yti" secondAttribute="centerY" constant="225" id="Ofl-xS-2KP"/>
@@ -800,10 +803,10 @@
                             <constraint firstItem="Ey9-NB-fSu" firstAttribute="centerY" secondItem="P3h-uu-Yti" secondAttribute="centerY" constant="175" id="c5o-7a-Yga"/>
                             <constraint firstItem="wWz-9B-mAg" firstAttribute="centerY" secondItem="P3h-uu-Yti" secondAttribute="centerY" constant="125" id="dEq-eg-AMM"/>
                             <constraint firstItem="Jun-eB-IUR" firstAttribute="centerY" secondItem="P3h-uu-Yti" secondAttribute="top" constant="200" id="epx-sy-Qei"/>
-                            <constraint firstItem="CBD-ET-HGu" firstAttribute="centerX" secondItem="P3h-uu-Yti" secondAttribute="centerX" constant="70" id="fuC-Bh-cmA"/>
+                            <constraint firstItem="CBD-ET-HGu" firstAttribute="centerX" secondItem="P3h-uu-Yti" secondAttribute="centerX" constant="75" id="fuC-Bh-cmA"/>
                             <constraint firstItem="Kbu-DK-qfW" firstAttribute="centerX" secondItem="P3h-uu-Yti" secondAttribute="centerX" constant="70" id="gg7-6Y-ASc"/>
                             <constraint firstItem="IJn-Hl-Ciu" firstAttribute="centerX" secondItem="P3h-uu-Yti" secondAttribute="centerX" constant="70" id="kWO-X3-TXk"/>
-                            <constraint firstItem="mCE-bj-WBu" firstAttribute="centerX" secondItem="P3h-uu-Yti" secondAttribute="centerX" constant="70" id="l55-2O-SWf"/>
+                            <constraint firstItem="mCE-bj-WBu" firstAttribute="centerX" secondItem="P3h-uu-Yti" secondAttribute="centerX" constant="75" id="l55-2O-SWf"/>
                             <constraint firstItem="Kbu-DK-qfW" firstAttribute="centerY" secondItem="P3h-uu-Yti" secondAttribute="centerY" constant="125" id="lRG-7d-Xoz"/>
                             <constraint firstItem="IJn-Hl-Ciu" firstAttribute="centerY" secondItem="P3h-uu-Yti" secondAttribute="centerY" constant="175" id="pHb-iC-smx"/>
                             <constraint firstItem="PZg-R0-wRv" firstAttribute="centerY" secondItem="P3h-uu-Yti" secondAttribute="centerY" constant="225" id="tN2-XD-JZF"/>
@@ -910,7 +913,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="KHh-Pm-W2H" firstAttribute="centerY" secondItem="TlJ-r2-zEF" secondAttribute="centerY" id="2Sr-YU-U2M"/>
                             <constraint firstItem="KHh-Pm-W2H" firstAttribute="centerX" secondItem="TlJ-r2-zEF" secondAttribute="centerX" id="xVd-pO-KBg"/>

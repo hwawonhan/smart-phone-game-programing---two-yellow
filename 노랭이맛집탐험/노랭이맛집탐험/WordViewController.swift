@@ -192,8 +192,7 @@ class WordViewController: UITableViewController, XMLParserDelegate {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         cell.textLabel?.text = (posts.object(at: indexPath.row) as AnyObject).value(forKey: "title") as! NSString as String
-        cell.textLabel?.font = UIFont(name: "HoonlefthanderR", size: 13)
-        cell.detailTextLabel?.font = UIFont(name: "HoonlefthanderR", size: 11)
+        
         cell.detailTextLabel?.text = (posts.object(at: indexPath.row) as AnyObject).value(forKey: "address") as! NSString as String
         return cell
     }
