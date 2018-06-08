@@ -30,7 +30,6 @@ class WordViewController: UITableViewController, XMLParserDelegate {
     
     func beginParsing()
     {
-        
         posts = []
         let api = "https://openapi.naver.com/v1/search/local.xml?query=\(location)\(foodtype)&display=30&start=1&sort=random"
         let encoding = api.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)

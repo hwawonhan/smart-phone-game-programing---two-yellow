@@ -22,7 +22,7 @@ class SelectMenuViewController: UIViewController, CLLocationManagerDelegate{
         locationManager = CLLocationManager()
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
-        
+        /*
         if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
             
             locationManager.startUpdatingLocation()
@@ -53,8 +53,9 @@ class SelectMenuViewController: UIViewController, CLLocationManagerDelegate{
             self.currentLocationText.text = "위치를 업데이트 해주세요."
         }
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
+ */
     }
-    
+ 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
