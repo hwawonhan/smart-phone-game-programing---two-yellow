@@ -4,9 +4,12 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
+		<string>BMYEONSUNG_ttf.ttf</string>
+		<string>BMHANNA_11yrs_ttf.ttf</string>
+		<string>BMJUA_ttf.ttf</string>
+		<string>BMKIRANGHAERANG-TTF.ttf</string>
+		<string>BMDOHTEON_ttf.ttf</string>
 		<string>HoonlefthanderR.otf</string>
-		<string>AAA.otf</string>
-		<string>AAAA.otf</string>
 	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>

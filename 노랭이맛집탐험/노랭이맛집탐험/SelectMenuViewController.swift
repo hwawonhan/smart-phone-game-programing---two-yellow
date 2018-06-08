@@ -35,7 +35,10 @@ class SelectMenuViewController: UIViewController, CLLocationManagerDelegate{
             let geocoder = CLGeocoder()
             let locale = Locale(identifier: "Ko-kr") //원하는 언어의 나라 코드를 넣어주시면 됩니다.
             geocoder.reverseGeocodeLocation(findLocation, preferredLocale: locale, completionHandler: {(placemarks, error) in if let address: [CLPlacemark] = placemarks { if var name: String = address.last?.name {
-                name.removeFirst(6)
+                let search1 = "대"
+                let range1: Range<String.Index> = name.range(of: search1)!
+                let location1 = name.distance(from: name.startIndex, to: range1.lowerBound)
+                name.removeFirst(location1 - 1)
                 
                 self.currentLocationText.text = "현재위치:  " + name
                 

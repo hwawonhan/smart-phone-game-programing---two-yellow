@@ -66,6 +66,14 @@ class ImageViewController: UIViewController , UIScrollViewDelegate, XMLParserDel
                 self.myparser.delegate = self
                 self.myparser.parse()
                 self.setimage()
+                if (self.pageImages.count <= 0)
+                {
+                    self.NOimageLabel.text = "이미지를 지원하지 않습니다."
+                    self.NOimageLabel.isHidden = false
+                }
+                else {
+                    self.NOimageLabel.isHidden = true
+                }
             }
         })
         task.resume()
@@ -101,26 +109,24 @@ class ImageViewController: UIViewController , UIScrollViewDelegate, XMLParserDel
                 myelements.setObject(mylink, forKey: "link" as NSCopying)
             }
             posts.add(myelements)
-            print(posts.count)
-            print("들어옴")
-            
         }
         
     }
     
     
     @IBAction func ClickTelButton(_ sender: Any) {
-        if let phoneCallURL = URL(string: "tel://\(telephone)") {
+        if(telephone != "")
+        {
+            if let phoneCallURL = URL(string: "tel://\(telephone)") {
             let application:UIApplication = UIApplication.shared
             if (application.canOpenURL(phoneCallURL)) {
                 application.open(phoneCallURL, options: [:], completionHandler: nil)
+                }
             }
         }
-        
     }
     
     func SettableviewData() {
-        
         nameLabel.text = name
         categoryLabel.text = category
         telLabel.setTitle(telephone, for: .normal)
@@ -136,14 +142,6 @@ class ImageViewController: UIViewController , UIScrollViewDelegate, XMLParserDel
                 {
                     let image: UIImage = UIImage(data: data)!
                     self.pageImages.append(image)
-                    print(pageImages.count)
-                    if (pageImages.count < 1)
-                    {
-                        NOimageLabel.isHidden = false
-                    }
-                    else {
-                        NOimageLabel.isHidden = true
-                    }
                 }
             }
         }
