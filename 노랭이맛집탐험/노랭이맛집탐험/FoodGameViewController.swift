@@ -19,6 +19,8 @@ class FoodGameViewController: UIViewController, AVCaptureVideoDataOutputSampleBu
     @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var frontView: UIView!
     
+    var location : String = ""
+    var mymap = GeographicPoint()
     var count = 0
     var seconds = 0.0
     var timer = Timer()
@@ -30,6 +32,8 @@ class FoodGameViewController: UIViewController, AVCaptureVideoDataOutputSampleBu
         if segue.identifier == "toResult" {
             if let todayFoodViewController = segue.destination as? TodayFoodViewController {
                 todayFoodViewController.resultFood = self.resultFood
+                todayFoodViewController.location = self.location
+                todayFoodViewController.mymap = self.mymap
             }
         }
     }
@@ -37,8 +41,21 @@ class FoodGameViewController: UIViewController, AVCaptureVideoDataOutputSampleBu
     @IBAction func handlePan(recognizer:UIPanGestureRecognizer) {
         let translation = recognizer.translation(in: self.view)
         if let view = recognizer.view {
-            view.center = CGPoint(x:view.center.x + translation.x,
-                                  y:view.center.y + translation.y)
+            var center = CGPoint(x:view.center.x + translation.x,
+                                 y:view.center.y + translation.y)
+            if(center.x <= backgroundView.frame.minX + 45) {
+                center.x = backgroundView.frame.minX + 45
+            }
+            else if(center.x >= backgroundView.frame.maxX - 45) {
+                center.x = backgroundView.frame.maxX - 45
+            }
+            if(center.y <= backgroundView.frame.minY + 45) {
+                center.y = backgroundView.frame.minY + 45
+            }
+            else if(center.y >= backgroundView.frame.maxY - 45) {
+                center.y = backgroundView.frame.maxY - 45
+            }
+            view.center = center
         }
         
         recognizer.setTranslation(CGPoint.zero, in: self.view)
@@ -59,11 +76,11 @@ class FoodGameViewController: UIViewController, AVCaptureVideoDataOutputSampleBu
         
         TimerLabel.text = "Time: \(Int(seconds))"
         
-        timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(self.subtractTime), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 0.25, target: self, selector: #selector(self.subtractTime), userInfo: nil, repeats: true)
     }
     
     @objc func subtractTime() {
-        seconds -= 0.5
+        seconds -= 0.25
         TimerLabel.text = "Time: \(Int(seconds.rounded()))"
         
         initItem()
@@ -156,7 +173,7 @@ class FoodGameViewController: UIViewController, AVCaptureVideoDataOutputSampleBu
                 
                 if(currentLocation != nil) {
                     if((currentLocation?.origin.y)! + 25 >= cameraView.frame.origin.y - cameraView.frame.height) {
-                        if((currentLocation?.origin.y)! - 25 <= cameraView.frame.origin.y + cameraView.frame.height) {
+                        if((currentLocation?.origin.y)! - 25 <= cameraView.frame.origin.y + (cameraView.frame.height / 2)) {
                             if((currentLocation?.origin.x)! + 25 >= cameraView.frame.origin.x - (cameraView.frame.width / 2) && (currentLocation?.origin.x)! - 25 <= cameraView.frame.origin.x + (cameraView.frame.width / 2)) {
                                 let explore = ExplodeView(frame: CGRect(x: (currentLocation?.midX)!,
                                                                     y: (currentLocation?.midY)!,
@@ -208,6 +225,7 @@ class FoodGameViewController: UIViewController, AVCaptureVideoDataOutputSampleBu
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         FinishPopUp.isUserInteractionEnabled = false
+        cameraView.center = backgroundView.center
         cameraView.isUserInteractionEnabled = true
     }
     
@@ -215,7 +233,7 @@ class FoodGameViewController: UIViewController, AVCaptureVideoDataOutputSampleBu
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    /*
+    
     var captureSession: AVCaptureSession!
     var previewLayer: AVCaptureVideoPreviewLayer?
     var dataOutput: AVCaptureVideoDataOutput?
@@ -256,7 +274,7 @@ class FoodGameViewController: UIViewController, AVCaptureVideoDataOutputSampleBu
                                              width: width, height: height, bitsPerComponent: 8,
                                              bytesPerRow: bytesPerRow, space: colorSpace,
                                              bitmapInfo: CGImageAlphaInfo.premultipliedFirst.rawValue|CGBitmapInfo.byteOrder32Little.rawValue)!
-        
+
         let imageRef:CGImage = newContext.makeImage()!
         let resultImage = UIImage(cgImage: imageRef,
                                   scale: 1.0, orientation: UIImageOrientation.leftMirrored)
@@ -327,8 +345,6 @@ class FoodGameViewController: UIViewController, AVCaptureVideoDataOutputSampleBu
         catch {
             print(error)
         }
-        
     }
- */
 }
 

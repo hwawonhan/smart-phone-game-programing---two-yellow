@@ -22,7 +22,7 @@ class SelectMenuViewController: UIViewController, CLLocationManagerDelegate{
         locationManager = CLLocationManager()
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
-        /*
+        
         if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
             
             locationManager.startUpdatingLocation()
@@ -53,7 +53,7 @@ class SelectMenuViewController: UIViewController, CLLocationManagerDelegate{
             self.currentLocationText.text = "위치를 업데이트 해주세요."
         }
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
- */
+ 
     }
  
     override func didReceiveMemoryWarning() {
@@ -66,6 +66,14 @@ class SelectMenuViewController: UIViewController, CLLocationManagerDelegate{
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toGame" {
+            if let FoodGameViewController = segue.destination as?   FoodGameViewController {
+                FoodGameViewController.location = self.sendlocation
+                FoodGameViewController.mymap = GeographicPoint(x: Double(self.LocationPoint.x), y: Double(self.LocationPoint.y))
+            }
+        }
+    
+        
         if segue.identifier == "HansikSegueToTableView" {
             if let navController = segue.destination as? UINavigationController {
                     if let wordviewController = navController.topViewController as?

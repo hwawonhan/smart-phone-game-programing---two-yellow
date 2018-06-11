@@ -9,6 +9,8 @@
 import UIKit
 
 class TodayFoodViewController: UIViewController {
+    var location : String = ""
+    var mymap = GeographicPoint()
     var resultFood : Int = 0
     var foodName : String!
     var image : [UIImage] = [
@@ -31,7 +33,9 @@ class TodayFoodViewController: UIViewController {
             if let navController = segue.destination as? UINavigationController {
                 if let wordviewController = navController.topViewController as?
                     WordViewController {
-                    wordviewController.foodtype = foodName
+                    wordviewController.foodtype = self.foodName
+                    wordviewController.location = self.location
+                    wordviewController.mymap = self.mymap
                 }
             }
         }
