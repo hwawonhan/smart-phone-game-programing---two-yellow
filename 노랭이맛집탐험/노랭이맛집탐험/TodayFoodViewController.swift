@@ -24,11 +24,13 @@ class TodayFoodViewController: UIViewController {
         #imageLiteral(resourceName: "food8.png")
     ]
     var timer = Timer()
+    var audiocontroller:AudioController = AudioController()
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var backgroundView: UIView!
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        timer.invalidate()
         if segue.identifier == "toInfo" {
             if let navController = segue.destination as? UINavigationController {
                 if let wordviewController = navController.topViewController as?
@@ -39,6 +41,21 @@ class TodayFoodViewController: UIViewController {
                 }
             }
         }
+        
+        if segue.identifier == "toReGame" {
+            if let foodGameViewController = segue.destination as? FoodGameViewController {
+                foodGameViewController.location = self.location
+                foodGameViewController.mymap = self.mymap
+            }
+        }
+    }
+    
+    @IBAction func EatAction(_ sender: Any) {
+        audiocontroller.playerEffect(name: SoundDing)
+    }
+    
+    @IBAction func NotEatAction(_ sender: Any) {
+        audiocontroller.playerEffect(name: SoundDing)
     }
     
     func setupGame() {
@@ -46,6 +63,7 @@ class TodayFoodViewController: UIViewController {
     }
     
     @objc func subtractTime() {
+        audiocontroller.playerEffect(name: SoundParticle)
         let explore = RandomExplodeView(frame: CGRect(x: randomFloat(min: 20.0, max: backgroundView.frame.maxX - 20.0),
                                                       y: randomFloat(min: 20.0, max: backgroundView.frame.maxY - 20.0),
                                                       width: randomFloat(min: 3, max: 20), height: randomFloat(min: 3, max: 20)))
@@ -61,6 +79,7 @@ class TodayFoodViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        audiocontroller.preloadAudioEffects(audioFileNames: AudioEffectFiles)
         imageView.image = image[resultFood]
         switch resultFood {
         case 0:

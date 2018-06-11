@@ -22,7 +22,7 @@ class ImageViewController: UIViewController , UIScrollViewDelegate, XMLParserDel
     var element = NSString()
     var linktitle = NSMutableString()
     var mylink = NSMutableString()
-    
+    var audiocontroller:AudioController = AudioController()
     @IBOutlet weak var NOimageLabel: UILabel!
     var url: String = ""
     
@@ -117,6 +117,7 @@ class ImageViewController: UIViewController , UIScrollViewDelegate, XMLParserDel
     @IBAction func ClickTelButton(_ sender: Any) {
         if(telephone != "")
         {
+            audiocontroller.playerEffect(name: SoundDing)
             if let phoneCallURL = URL(string: "tel://\(telephone)") {
             let application:UIApplication = UIApplication.shared
             if (application.canOpenURL(phoneCallURL)) {
@@ -180,7 +181,7 @@ class ImageViewController: UIViewController , UIScrollViewDelegate, XMLParserDel
         super.viewDidLoad()
         beginParsing()
         SettableviewData()
-        
+        audiocontroller.preloadAudioEffects(audioFileNames: AudioEffectFiles)
     }
     
     func loadPage (_ page: Int) {

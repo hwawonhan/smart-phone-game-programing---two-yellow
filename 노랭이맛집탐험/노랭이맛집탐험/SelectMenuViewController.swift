@@ -11,13 +11,43 @@ import CoreLocation
 
 class SelectMenuViewController: UIViewController, CLLocationManagerDelegate{
     @IBOutlet weak var currentLocationText: UITextField!
-
+    var audiocontroller:AudioController = AudioController()
     var locationManager : CLLocationManager!
     var sendlocation = ""
     var LocationPoint = CGPoint()
+    
+    @IBAction func Action(_ sender: Any) {
+        audiocontroller.playerEffect(name: SoundDing)
+    }
+    @IBAction func Action1(_ sender: Any) {
+        audiocontroller.playerEffect(name: SoundDing)
+    }
+    @IBAction func Action2(_ sender: Any) {
+        audiocontroller.playerEffect(name: SoundDing)
+    }
+    @IBAction func Action3(_ sender: Any) {
+        audiocontroller.playerEffect(name: SoundDing)
+    }
+    @IBAction func Action4(_ sender: Any) {
+        audiocontroller.playerEffect(name: SoundDing)
+    }
+    @IBAction func Action5(_ sender: Any) {
+        audiocontroller.playerEffect(name: SoundDing)
+    }
+    @IBAction func Action6(_ sender: Any) {
+        audiocontroller.playerEffect(name: SoundDing)
+    }
+    @IBAction func Action7(_ sender: Any) {
+        audiocontroller.playerEffect(name: SoundDing)
+    }
+
+    @IBAction func Action8(_ sender: Any) {
+        audiocontroller.playerEffect(name: SoundDing)
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        audiocontroller.preloadAudioEffects(audioFileNames: AudioEffectFiles)
         // Do any additional setup after loading the view.
         locationManager = CLLocationManager()
         locationManager.delegate = self

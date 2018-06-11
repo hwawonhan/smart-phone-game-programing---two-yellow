@@ -15,7 +15,7 @@ class WordViewController: UITableViewController, XMLParserDelegate {
     var posts = NSMutableArray()
     var elements = NSMutableDictionary()
     var element = NSString()
-    
+    var audiocontroller:AudioController = AudioController()
     var name = NSMutableString()
     var adress = NSMutableString()
     var category = NSMutableString()
@@ -169,6 +169,7 @@ class WordViewController: UITableViewController, XMLParserDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         beginParsing()
+        audiocontroller.preloadAudioEffects(audioFileNames: AudioEffectFiles)
     }
 
     override func didReceiveMemoryWarning() {
@@ -186,6 +187,10 @@ class WordViewController: UITableViewController, XMLParserDelegate {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return posts.count
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        audiocontroller.playerEffect(name: SoundDing)
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

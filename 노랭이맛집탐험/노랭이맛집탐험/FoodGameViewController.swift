@@ -18,15 +18,23 @@ class FoodGameViewController: UIViewController, AVCaptureVideoDataOutputSampleBu
     @IBOutlet weak var FinishPopUp: UIView!
     @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var frontView: UIView!
+    @IBOutlet weak var ExplainLable: UILabel!
+    @IBOutlet weak var CircleView: CircleView!
     
+    var audiocontroller:AudioController = AudioController()
     var location : String = ""
     var mymap = GeographicPoint()
     var count = 0
     var seconds = 0.0
+    var circleTimer = Timer()
     var timer = Timer()
+    var ExplainTimer = Timer()
     var foods : [UIImageView] = []
     var foodCount : [Int] = [0, 0, 0, 0, 0, 0, 0, 0]
     var resultFood = 0
+    var scaleValue = CGPoint(x : 0, y: 0)
+    var setUpTime = 0
+    var circleTime = 0
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toResult" {
@@ -49,8 +57,8 @@ class FoodGameViewController: UIViewController, AVCaptureVideoDataOutputSampleBu
             else if(center.x >= backgroundView.frame.maxX - 45) {
                 center.x = backgroundView.frame.maxX - 45
             }
-            if(center.y <= backgroundView.frame.minY + 45) {
-                center.y = backgroundView.frame.minY + 45
+            if(center.y <= backgroundView.frame.minY + (backgroundView.frame.size.height / 2) + 45) {
+                center.y = backgroundView.frame.minY + (backgroundView.frame.size.height / 2) + 45
             }
             else if(center.y >= backgroundView.frame.maxY - 45) {
                 center.y = backgroundView.frame.maxY - 45
@@ -59,24 +67,61 @@ class FoodGameViewController: UIViewController, AVCaptureVideoDataOutputSampleBu
         }
         
         recognizer.setTranslation(CGPoint.zero, in: self.view)
+        CircleView.center = cameraView.center
         
         DispatchQueue.main.async(execute: {
             self.checkCollision()
         })
     }
     
+    @IBAction func NextAction(_ sender: Any) {
+        audiocontroller.playerEffect(name: SoundDing)
+    }
+    
     @IBAction func StartAction(_ sender: UIButton) {
+        audiocontroller.playerEffect(name: SoundDing)
         setupGame()
         StartButton.isUserInteractionEnabled = false
     }
     
     func setupGame() {
+        ExplainTimer.invalidate()
+        circleTimer.invalidate()
+        CircleView.alpha = 1
+        ExplainLable.alpha = 0
         seconds = 30
         count = 0
         
         TimerLabel.text = "Time: \(Int(seconds))"
         
         timer = Timer.scheduledTimer(timeInterval: 0.25, target: self, selector: #selector(self.subtractTime), userInfo: nil, repeats: true)
+    }
+    
+    @objc func circleAnimation() {
+        if(circleTime % 2 == 0) {
+            CircleView.alpha = 0
+        } else {
+            CircleView.alpha = 1
+        }
+        circleTime += 1
+    }
+    
+    @objc func increaseTime() {
+        if(setUpTime == 40) {
+            setUpTime = 0
+        }
+        
+        if(setUpTime < 20) {
+        scaleValue.x += 0.01
+        scaleValue.y += 0.01
+        }
+        else if(setUpTime >= 20 && setUpTime < 40){
+            scaleValue.x -= 0.01
+            scaleValue.y -= 0.01
+        }
+        setUpTime += 1
+        
+        StartButton.transform = CGAffineTransform(scaleX: 1 + scaleValue.x, y: 1 + scaleValue.y);
     }
     
     @objc func subtractTime() {
@@ -87,6 +132,7 @@ class FoodGameViewController: UIViewController, AVCaptureVideoDataOutputSampleBu
         checkCollision()
         
         if(seconds == 0) {
+            audiocontroller.playerEffect(name: SoundWrong)
             timer.invalidate()
             
             var cnt = resultFood
@@ -175,6 +221,7 @@ class FoodGameViewController: UIViewController, AVCaptureVideoDataOutputSampleBu
                     if((currentLocation?.origin.y)! + 25 >= cameraView.frame.origin.y - cameraView.frame.height) {
                         if((currentLocation?.origin.y)! - 25 <= cameraView.frame.origin.y + (cameraView.frame.height / 2)) {
                             if((currentLocation?.origin.x)! + 25 >= cameraView.frame.origin.x - (cameraView.frame.width / 2) && (currentLocation?.origin.x)! - 25 <= cameraView.frame.origin.x + (cameraView.frame.width / 2)) {
+                                audiocontroller.playerEffect(name: SoundParticle)
                                 let explore = ExplodeView(frame: CGRect(x: (currentLocation?.midX)!,
                                                                     y: (currentLocation?.midY)!,
                                                                     width: 5, height: 5))
@@ -224,9 +271,15 @@ class FoodGameViewController: UIViewController, AVCaptureVideoDataOutputSampleBu
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        audiocontroller.preloadAudioEffects(audioFileNames: AudioEffectFiles)
         FinishPopUp.isUserInteractionEnabled = false
         cameraView.center = backgroundView.center
+        CircleView.center = cameraView.center
         cameraView.isUserInteractionEnabled = true
+        CircleView.awakeFromNib()
+        
+        ExplainTimer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(self.increaseTime), userInfo: nil, repeats: true)
+        circleTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(self.circleAnimation), userInfo: nil, repeats: true)
     }
     
     override func didReceiveMemoryWarning() {

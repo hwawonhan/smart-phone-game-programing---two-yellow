@@ -10,7 +10,6 @@
 		A10BC6EB20B9A93E008BF9EB /* SelectMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10BC6EA20B9A93E008BF9EB /* SelectMenuViewController.swift */; };
 		A126EE5420B8136A009EA2F5 /* WordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A126EE5320B8136A009EA2F5 /* WordViewController.swift */; };
 		A126EE5620B8139D009EA2F5 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = A126EE5520B8139D009EA2F5 /* Word.swift */; };
-		A126EE5820B813FC009EA2F5 /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A126EE5720B813FC009EA2F5 /* SampleData.swift */; };
 		A144A45020CA6A5B005643E3 /* BMJUA_ttf.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A144A44B20CA6A5B005643E3 /* BMJUA_ttf.ttf */; };
 		A144A45120CA6A5B005643E3 /* BMHANNA_11yrs_ttf.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A144A44C20CA6A5B005643E3 /* BMHANNA_11yrs_ttf.ttf */; };
 		A144A45220CA6A5B005643E3 /* BMKIRANGHAERANG-TTF.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A144A44D20CA6A5B005643E3 /* BMKIRANGHAERANG-TTF.ttf */; };
@@ -40,6 +39,12 @@
 		A1C3D95920C51F290073431A /* photo5.png in Resources */ = {isa = PBXBuildFile; fileRef = A1C3D95420C51F290073431A /* photo5.png */; };
 		A1C3D95A20C51F290073431A /* photo2.png in Resources */ = {isa = PBXBuildFile; fileRef = A1C3D95520C51F290073431A /* photo2.png */; };
 		A1C3D95B20C51F290073431A /* photo1.png in Resources */ = {isa = PBXBuildFile; fileRef = A1C3D95620C51F290073431A /* photo1.png */; };
+		A1CD948120CE7CD1006CD3C6 /* Final 통과 효과음.wav in Resources */ = {isa = PBXBuildFile; fileRef = A1CD947F20CE7CD1006CD3C6 /* Final 통과 효과음.wav */; };
+		A1CD948220CE7CD1006CD3C6 /* Buy.wav in Resources */ = {isa = PBXBuildFile; fileRef = A1CD948020CE7CD1006CD3C6 /* Buy.wav */; };
+		A1CD948620CE7E59006CD3C6 /* AudioController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CD948520CE7E59006CD3C6 /* AudioController.swift */; };
+		A1CD948820CE7E94006CD3C6 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CD948720CE7E94006CD3C6 /* Config.swift */; };
+		A1CD948A20CE95C4006CD3C6 /* particleSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = A1CD948920CE95C4006CD3C6 /* particleSound.wav */; };
+		A1CD948E20CEA18B006CD3C6 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CD948D20CEA18B006CD3C6 /* CircleView.swift */; };
 		A1ED117B20C838F600535C3F /* HoonlefthanderR.otf in Resources */ = {isa = PBXBuildFile; fileRef = A1ED117A20C838F600535C3F /* HoonlefthanderR.otf */; };
 		A1FE844520BC62AA00B857C2 /* FoodGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1FE844420BC62AA00B857C2 /* FoodGameViewController.swift */; };
 /* End PBXBuildFile section */
@@ -62,7 +67,6 @@
 		A10BC6EA20B9A93E008BF9EB /* SelectMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectMenuViewController.swift; sourceTree = "<group>"; };
 		A126EE5320B8136A009EA2F5 /* WordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordViewController.swift; sourceTree = "<group>"; };
 		A126EE5520B8139D009EA2F5 /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
-		A126EE5720B813FC009EA2F5 /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
 		A144A44B20CA6A5B005643E3 /* BMJUA_ttf.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BMJUA_ttf.ttf; sourceTree = "<group>"; };
 		A144A44C20CA6A5B005643E3 /* BMHANNA_11yrs_ttf.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BMHANNA_11yrs_ttf.ttf; sourceTree = "<group>"; };
 		A144A44D20CA6A5B005643E3 /* BMKIRANGHAERANG-TTF.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BMKIRANGHAERANG-TTF.ttf"; sourceTree = "<group>"; };
@@ -146,6 +150,12 @@
 		A1C3D95420C51F290073431A /* photo5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = photo5.png; sourceTree = "<group>"; };
 		A1C3D95520C51F290073431A /* photo2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = photo2.png; sourceTree = "<group>"; };
 		A1C3D95620C51F290073431A /* photo1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = photo1.png; sourceTree = "<group>"; };
+		A1CD947F20CE7CD1006CD3C6 /* Final 통과 효과음.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Final 통과 효과음.wav"; sourceTree = "<group>"; };
+		A1CD948020CE7CD1006CD3C6 /* Buy.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Buy.wav; sourceTree = "<group>"; };
+		A1CD948520CE7E59006CD3C6 /* AudioController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioController.swift; sourceTree = "<group>"; };
+		A1CD948720CE7E94006CD3C6 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		A1CD948920CE95C4006CD3C6 /* particleSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = particleSound.wav; sourceTree = "<group>"; };
+		A1CD948D20CEA18B006CD3C6 /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		A1ED117A20C838F600535C3F /* HoonlefthanderR.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = HoonlefthanderR.otf; sourceTree = "<group>"; };
 		A1FE844420BC62AA00B857C2 /* FoodGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodGameViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -184,6 +194,7 @@
 		A171170720A0455400A540BF /* 노랭이맛집탐험 */ = {
 			isa = PBXGroup;
 			children = (
+				A1CD948720CE7E94006CD3C6 /* Config.swift */,
 				A1B4BA2720C69C6700CB630D /* 노랭이맛집탐험-Bridging-Header.h */,
 				A197BB8320BB70C60033D8AC /* ImageViewController.swift */,
 				A171170820A0455500A540BF /* AppDelegate.swift */,
@@ -194,17 +205,18 @@
 				A171171420A0455A00A540BF /* Info.plist */,
 				A126EE5320B8136A009EA2F5 /* WordViewController.swift */,
 				A126EE5520B8139D009EA2F5 /* Word.swift */,
-				A126EE5720B813FC009EA2F5 /* SampleData.swift */,
 				A10BC6EA20B9A93E008BF9EB /* SelectMenuViewController.swift */,
 				A1FE844420BC62AA00B857C2 /* FoodGameViewController.swift */,
 				A17F030E20CAEA05005A73F1 /* TodayFoodViewController.swift */,
 				A1AD90F320C4744500540FE1 /* ScrollViewContainr.swift */,
 				A1B4BA2F20C6CC4F00CB630D /* Header.h */,
 				A1B4BA3020C6CD2F00CB630D /* MapViewController.swift */,
+				A1CD948520CE7E59006CD3C6 /* AudioController.swift */,
 				A1B4BA4E20C6CF0E00CB630D /* NMapViewResources.swift */,
 				A1B4BAAD20C71C6800CB630D /* GeoConverter.swift */,
 				A17F030C20CADB1D005A73F1 /* ExplodeView.swift */,
 				A16EC7F220CAFD0100AA728E /* RandomExplodeView.swift */,
+				A1CD948D20CEA18B006CD3C6 /* CircleView.swift */,
 				A1B4BA6C20C6D01F00CB630D /* Resource */,
 			);
 			path = "노랭이맛집탐험";
@@ -221,6 +233,9 @@
 		A1B4BA6C20C6D01F00CB630D /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				A1CD948920CE95C4006CD3C6 /* particleSound.wav */,
+				A1CD948020CE7CD1006CD3C6 /* Buy.wav */,
+				A1CD947F20CE7CD1006CD3C6 /* Final 통과 효과음.wav */,
 				A17F030A20CADB19005A73F1 /* Particles */,
 				A17F031020CAEDB7005A73F1 /* food */,
 				A17F030620CA7A47005A73F1 /* Launch.png */,
@@ -465,12 +480,15 @@
 				A1ED117B20C838F600535C3F /* HoonlefthanderR.otf in Resources */,
 				A144A45120CA6A5B005643E3 /* BMHANNA_11yrs_ttf.ttf in Resources */,
 				A171170E20A0455500A540BF /* Main.storyboard in Resources */,
+				A1CD948A20CE95C4006CD3C6 /* particleSound.wav in Resources */,
+				A1CD948120CE7CD1006CD3C6 /* Final 통과 효과음.wav in Resources */,
 				A1C3D95A20C51F290073431A /* photo2.png in Resources */,
 				A17F030720CA7A47005A73F1 /* Launch.png in Resources */,
 				A1C3D95820C51F290073431A /* photo4.png in Resources */,
 				A1C3D95920C51F290073431A /* photo5.png in Resources */,
 				A1C3D95720C51F290073431A /* photo3.png in Resources */,
 				A144A45020CA6A5B005643E3 /* BMJUA_ttf.ttf in Resources */,
+				A1CD948220CE7CD1006CD3C6 /* Buy.wav in Resources */,
 				A144A45220CA6A5B005643E3 /* BMKIRANGHAERANG-TTF.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -498,17 +516,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1CD948E20CEA18B006CD3C6 /* CircleView.swift in Sources */,
 				A17F030D20CADB1E005A73F1 /* ExplodeView.swift in Sources */,
 				A1B4BAAE20C71C6800CB630D /* GeoConverter.swift in Sources */,
 				A17F030F20CAEA05005A73F1 /* TodayFoodViewController.swift in Sources */,
 				A16EC7F320CAFD0100AA728E /* RandomExplodeView.swift in Sources */,
+				A1CD948820CE7E94006CD3C6 /* Config.swift in Sources */,
 				A126EE5420B8136A009EA2F5 /* WordViewController.swift in Sources */,
 				A126EE5620B8139D009EA2F5 /* Word.swift in Sources */,
+				A1CD948620CE7E59006CD3C6 /* AudioController.swift in Sources */,
 				A171170B20A0455500A540BF /* ViewController.swift in Sources */,
 				A1B4BA3120C6CD2F00CB630D /* MapViewController.swift in Sources */,
 				A1B4BA4F20C6CF0E00CB630D /* NMapViewResources.swift in Sources */,
 				A197BB8420BB70C60033D8AC /* ImageViewController.swift in Sources */,
-				A126EE5820B813FC009EA2F5 /* SampleData.swift in Sources */,
 				A1FE844520BC62AA00B857C2 /* FoodGameViewController.swift in Sources */,
 				A1AD90F420C4744500540FE1 /* ScrollViewContainr.swift in Sources */,
 				A171170920A0455500A540BF /* AppDelegate.swift in Sources */,
