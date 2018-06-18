@@ -45,13 +45,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="노랭이둘" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xtO-K7-Fbt">
-                                <rect key="frame" x="109" y="159" width="157.5" height="49.5"/>
+                                <rect key="frame" x="117.5" y="160.5" width="142" height="48"/>
                                 <fontDescription key="fontDescription" name="BMDoHyeon" family="BM DoHyeon" pointSize="41"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="맛집탐험" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7eG-cx-hG3">
-                                <rect key="frame" x="109" y="229" width="157.5" height="49.5"/>
+                                <rect key="frame" x="117.5" y="230.5" width="142" height="48"/>
                                 <fontDescription key="fontDescription" name="BMDoHyeon" family="BM DoHyeon" pointSize="41"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -100,7 +100,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qK5-s6-ucl">
-                                <rect key="frame" x="87.5" y="542" width="200" height="75"/>
+                                <rect key="frame" x="87.5" y="498" width="200" height="75"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="75" id="4ua-39-21r"/>
                                     <constraint firstAttribute="width" secondItem="qK5-s6-ucl" secondAttribute="height" multiplier="8:3" id="Anv-7C-w4f"/>
@@ -130,11 +130,14 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X6k-Yv-J7N">
-                                <rect key="frame" x="277" y="65" width="83" height="29"/>
+                                <rect key="frame" x="271" y="65" width="89" height="32"/>
                                 <fontDescription key="fontDescription" name="BMJUA" family="BM JUA_TTF" pointSize="17"/>
                                 <state key="normal" title="위치업데이트">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="LocationUpdate:" destination="Aei-6C-wl4" eventType="touchUpInside" id="P1m-WT-oss"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="1nt-sY-8pR">
                                 <rect key="frame" x="200" y="120" width="100" height="100"/>
@@ -464,7 +467,7 @@
                                 <rect key="frame" x="20" y="81" width="335" height="391"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="카메라를 움직여 원하는 음식을 먹어볼까요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Jp-az-Tg0">
-                                <rect key="frame" x="50.5" y="181" width="273" height="17"/>
+                                <rect key="frame" x="40.5" y="181" width="293.5" height="20"/>
                                 <fontDescription key="fontDescription" name="BMJUA" family="BM JUA_TTF" pointSize="17"/>
                                 <color key="textColor" cyan="0.0" magenta="0.0" yellow="0.0" black="0.90000000000000002" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -498,13 +501,13 @@
                                 <rect key="frame" x="37.5" y="179" width="300" height="200"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오늘 먹을 음식은?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dzn-MJ-eZc">
-                                        <rect key="frame" x="67.5" y="30" width="165" height="80"/>
+                                        <rect key="frame" x="60.5" y="30" width="179.5" height="80"/>
                                         <fontDescription key="fontDescription" name="BMJUA" family="BM JUA_TTF" pointSize="25"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pKJ-gS-RTz">
-                                        <rect key="frame" x="67.5" y="125.5" width="165" height="29"/>
+                                        <rect key="frame" x="60.5" y="124" width="179.5" height="32"/>
                                         <color key="backgroundColor" cyan="0.0" magenta="0.0010586322750896215" yellow="1" black="0.0" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                                         <fontDescription key="fontDescription" name="BMJUA" family="BM JUA_TTF" pointSize="17"/>
                                         <color key="tintColor" red="0.098039215686274508" green="0.098039215686274508" blue="0.098039215686274508" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -691,14 +694,14 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NLG-fP-h36">
-                                            <rect key="frame" x="16" y="13" width="38" height="18"/>
+                                            <rect key="frame" x="16" y="10" width="34" height="21"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" name="BMJUA" family="BM JUA_TTF" pointSize="18"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Mov-4U-cZc">
-                                            <rect key="frame" x="16" y="33" width="45.5" height="13"/>
+                                            <rect key="frame" x="16" y="33" width="44.5" height="15.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" name="BMJUA" family="BM JUA_TTF" pointSize="13"/>
                                             <nil key="textColor"/>
@@ -1022,7 +1025,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="eKb-m3-Rbt">
-                                <rect key="frame" x="10" y="155" width="355" height="502"/>
+                                <rect key="frame" x="10" y="155" width="355" height="458"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="내 위치 주변의 원하는 음식을 알려주는 앱!" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jJh-z7-Jqq">
                                         <rect key="frame" x="0.0" y="0.0" width="355" height="50"/>
@@ -1049,7 +1052,7 @@
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="네이버 API 사용중!" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dnF-sg-Ipm">
-                                        <rect key="frame" x="0.0" y="150" width="355" height="352"/>
+                                        <rect key="frame" x="0.0" y="150" width="355" height="308"/>
                                         <color key="backgroundColor" cyan="0.0" magenta="0.0" yellow="0.39761262619999999" black="0.0" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                                         <fontDescription key="fontDescription" name="BMJUA" family="BM JUA_TTF" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -1184,9 +1187,9 @@
         <image name="food8" width="200" height="200"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="epO-Dd-Y6n"/>
-        <segue reference="j1l-Lq-l0x"/>
-        <segue reference="Vj7-9T-SD2"/>
-        <segue reference="gfs-jG-hWh"/>
+        <segue reference="fHo-gx-arB"/>
+        <segue reference="BNp-cD-Dyy"/>
+        <segue reference="u9O-Hb-wZn"/>
+        <segue reference="GiY-Ro-933"/>
     </inferredMetricsTieBreakers>
 </document>

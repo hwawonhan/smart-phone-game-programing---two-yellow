@@ -87,7 +87,7 @@ class FoodGameViewController: UIViewController, AVCaptureVideoDataOutputSampleBu
     func setupGame() {
         ExplainTimer.invalidate()
         circleTimer.invalidate()
-        CircleView.alpha = 1
+        CircleView.alpha = 0
         ExplainLable.alpha = 0
         seconds = 30
         count = 0
@@ -271,6 +271,10 @@ class FoodGameViewController: UIViewController, AVCaptureVideoDataOutputSampleBu
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        cameraView.layer.cornerRadius = 10
+        cameraView.clipsToBounds = true
+        cameraView.layer.borderWidth = 3
+        cameraView.layer.borderColor = UIColor.orange.cgColor
         audiocontroller.preloadAudioEffects(audioFileNames: AudioEffectFiles)
         FinishPopUp.isUserInteractionEnabled = false
         cameraView.center = backgroundView.center

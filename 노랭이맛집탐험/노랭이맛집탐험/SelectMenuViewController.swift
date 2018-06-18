@@ -16,6 +16,10 @@ class SelectMenuViewController: UIViewController, CLLocationManagerDelegate{
     var sendlocation = ""
     var LocationPoint = CGPoint()
     
+    @IBAction func LocationUpdate(_ sender: Any) {
+        setLocation()
+    }
+    
     @IBAction func Action(_ sender: Any) {
         audiocontroller.playerEffect(name: SoundDing)
     }
@@ -49,6 +53,19 @@ class SelectMenuViewController: UIViewController, CLLocationManagerDelegate{
         super.viewDidLoad()
         audiocontroller.preloadAudioEffects(audioFileNames: AudioEffectFiles)
         // Do any additional setup after loading the view.
+        setLocation()
+    }
+ 
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func doneToSelectViewController(segue:UIStoryboardSegue) {
+        
+    }
+    
+    func setLocation () {
         locationManager = CLLocationManager()
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
@@ -83,15 +100,6 @@ class SelectMenuViewController: UIViewController, CLLocationManagerDelegate{
             self.currentLocationText.text = "위치를 업데이트 해주세요."
         }
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
- 
-    }
- 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    @IBAction func doneToSelectViewController(segue:UIStoryboardSegue) {
         
     }
     
